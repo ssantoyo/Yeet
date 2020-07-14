@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58EFF495AE27A3DCD4263CBC /* Pods_YeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27741C3CD52C1ECFFD06B43A /* Pods_YeetTests.framework */; };
+		6A3C63AF65BEE81BBD80F585 /* Pods_Yeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B49D03898C3DCFCAD399008 /* Pods_Yeet.framework */; };
 		8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9424BE049E00B3977D /* AppDelegate.m */; };
 		8D20DC9824BE049E00B3977D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9724BE049E00B3977D /* SceneDelegate.m */; };
 		8D20DC9B24BE049E00B3977D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9A24BE049E00B3977D /* ViewController.m */; };
@@ -16,6 +18,9 @@
 		8D20DCA624BE049E00B3977D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCA524BE049E00B3977D /* main.m */; };
 		8D20DCB024BE049E00B3977D /* YeetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCAF24BE049E00B3977D /* YeetTests.m */; };
 		8D20DCBB24BE049E00B3977D /* YeetUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCBA24BE049E00B3977D /* YeetUITests.m */; };
+		8D20DCCB24BE13EA00B3977D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCCA24BE13EA00B3977D /* LoginViewController.m */; };
+		8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCCD24BE446A00B3977D /* SignUpViewController.m */; };
+		DE7140DE52CC2B7FAACE0D6E /* Pods_Yeet_YeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1FB0B136663481607D8ACBDC /* Pods-Yeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet.release.xcconfig"; path = "Target Support Files/Pods-Yeet/Pods-Yeet.release.xcconfig"; sourceTree = "<group>"; };
+		27741C3CD52C1ECFFD06B43A /* Pods_YeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yeet_YeetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B49D03898C3DCFCAD399008 /* Pods_Yeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70789B435B721AF9D2B9F5AD /* Pods-Yeet-YeetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.release.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D20DC9024BE049E00B3977D /* Yeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20DC9324BE049E00B3977D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D20DC9424BE049E00B3977D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +64,14 @@
 		8D20DCB624BE049E00B3977D /* YeetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YeetUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20DCBA24BE049E00B3977D /* YeetUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YeetUITests.m; sourceTree = "<group>"; };
 		8D20DCBC24BE049E00B3977D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D20DCC924BE13EA00B3977D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		8D20DCCA24BE13EA00B3977D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		8D20DCCC24BE446A00B3977D /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		8D20DCCD24BE446A00B3977D /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.release.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.release.xcconfig"; sourceTree = "<group>"; };
+		CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.debug.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EB091F450B5453557CBE790E /* Pods-Yeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet.debug.xcconfig"; path = "Target Support Files/Pods-Yeet/Pods-Yeet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A3C63AF65BEE81BBD80F585 /* Pods_Yeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58EFF495AE27A3DCD4263CBC /* Pods_YeetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +95,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7140DE52CC2B7FAACE0D6E /* Pods_Yeet_YeetUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A751ADA0A8AB82122D608CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB091F450B5453557CBE790E /* Pods-Yeet.debug.xcconfig */,
+				1FB0B136663481607D8ACBDC /* Pods-Yeet.release.xcconfig */,
+				CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */,
+				70789B435B721AF9D2B9F5AD /* Pods-Yeet-YeetUITests.release.xcconfig */,
+				E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */,
+				8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8D20DC8724BE049E00B3977D = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +122,8 @@
 				8D20DCAE24BE049E00B3977D /* YeetTests */,
 				8D20DCB924BE049E00B3977D /* YeetUITests */,
 				8D20DC9124BE049E00B3977D /* Products */,
+				8A751ADA0A8AB82122D608CF /* Pods */,
+				DF630477BF5B240D16A3E0F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +140,7 @@
 		8D20DC9224BE049E00B3977D /* Yeet */ = {
 			isa = PBXGroup;
 			children = (
+				8D20DCC824BE13D200B3977D /* View Controllers */,
 				8D20DC9324BE049E00B3977D /* AppDelegate.h */,
 				8D20DC9424BE049E00B3977D /* AppDelegate.m */,
 				8D20DC9624BE049E00B3977D /* SceneDelegate.h */,
@@ -137,6 +174,27 @@
 			path = YeetUITests;
 			sourceTree = "<group>";
 		};
+		8D20DCC824BE13D200B3977D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8D20DCC924BE13EA00B3977D /* LoginViewController.h */,
+				8D20DCCA24BE13EA00B3977D /* LoginViewController.m */,
+				8D20DCCC24BE446A00B3977D /* SignUpViewController.h */,
+				8D20DCCD24BE446A00B3977D /* SignUpViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DF630477BF5B240D16A3E0F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B49D03898C3DCFCAD399008 /* Pods_Yeet.framework */,
+				305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */,
+				27741C3CD52C1ECFFD06B43A /* Pods_YeetTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D20DCBF24BE049E00B3977D /* Build configuration list for PBXNativeTarget "Yeet" */;
 			buildPhases = (
+				DF38B70108CB63692C601470 /* [CP] Check Pods Manifest.lock */,
 				8D20DC8C24BE049E00B3977D /* Sources */,
 				8D20DC8D24BE049E00B3977D /* Frameworks */,
 				8D20DC8E24BE049E00B3977D /* Resources */,
+				4A723BF18BB8A1FBE838E76F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +221,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D20DCC224BE049E00B3977D /* Build configuration list for PBXNativeTarget "YeetTests" */;
 			buildPhases = (
+				38D1BFD13B1EC99ECDBFD1D9 /* [CP] Check Pods Manifest.lock */,
 				8D20DCA724BE049E00B3977D /* Sources */,
 				8D20DCA824BE049E00B3977D /* Frameworks */,
 				8D20DCA924BE049E00B3977D /* Resources */,
@@ -179,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8D20DCC524BE049E00B3977D /* Build configuration list for PBXNativeTarget "YeetUITests" */;
 			buildPhases = (
+				EED2E02B3CDD828974A2FD98 /* [CP] Check Pods Manifest.lock */,
 				8D20DCB224BE049E00B3977D /* Sources */,
 				8D20DCB324BE049E00B3977D /* Frameworks */,
 				8D20DCB424BE049E00B3977D /* Resources */,
+				445F1A47C11B03FFF15E2B27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +325,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38D1BFD13B1EC99ECDBFD1D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YeetTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		445F1A47C11B03FFF15E2B27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A723BF18BB8A1FBE838E76F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yeet/Pods-Yeet-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yeet/Pods-Yeet-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yeet/Pods-Yeet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF38B70108CB63692C601470 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yeet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED2E02B3CDD828974A2FD98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yeet-YeetUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8D20DC8C24BE049E00B3977D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,8 +435,10 @@
 			files = (
 				8D20DC9B24BE049E00B3977D /* ViewController.m in Sources */,
 				8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */,
+				8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */,
 				8D20DCA624BE049E00B3977D /* main.m in Sources */,
 				8D20DC9824BE049E00B3977D /* SceneDelegate.m in Sources */,
+				8D20DCCB24BE13EA00B3977D /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +605,7 @@
 		};
 		8D20DCC024BE049E00B3977D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB091F450B5453557CBE790E /* Pods-Yeet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +623,7 @@
 		};
 		8D20DCC124BE049E00B3977D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB0B136663481607D8ACBDC /* Pods-Yeet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +641,7 @@
 		};
 		8D20DCC324BE049E00B3977D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +662,7 @@
 		};
 		8D20DCC424BE049E00B3977D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +683,7 @@
 		};
 		8D20DCC624BE049E00B3977D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R462SWBSJD;
@@ -529,6 +702,7 @@
 		};
 		8D20DCC724BE049E00B3977D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70789B435B721AF9D2B9F5AD /* Pods-Yeet-YeetUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R462SWBSJD;
