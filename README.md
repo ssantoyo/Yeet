@@ -59,8 +59,7 @@
    * ...
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src='http://g.recordit.co/bQqmVVzfxh.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
 
 ### [BONUS] Digital Wireframes & Mockups
 
@@ -69,7 +68,32 @@
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+## Model: Post
+| Column 1     | Column 2        | Column 3                                    |
+| ------------ | --------------- | ------------------------------------------- |
+| objectID     | String          | Unique id for the user post( default field) |
+| createdAt    | Date            | Date when post is created(default field)    |
+| author       | Pointer to User | Post author                                 |
+| image        | File            | Image uploaded by author                    |
+| likesCount   | Number          | Number of likes per post                    |
+| review       | String          | Review by the author of the song it refers to |
+| commentCount | Number          | Number of comments per post                 |
+
+## Model: User
+| Property         | Type   | Description |
+| ---------------- | ------ | ----------- |
+| objectID | String | Unique id for the user post (default field) |
+| Spotify username | String | User's Spotify username |
+| password | String | User's password |
+| username | String | User's username |
+
+## Model: Song
+| Property     | Type | Description |
+| ------------ | ---- | ----------- |
+| objectID | string |Unique id for the user post (default field)             |
+| title | string | title of the song   |
+| artist | string  | name of the artist            |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
