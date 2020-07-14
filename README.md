@@ -66,7 +66,8 @@
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+This section includes the data objects that will be used for the app
+
 ### Models
 ## Model: Post
 | Column 1     | Column 2        | Column 3                                    |
