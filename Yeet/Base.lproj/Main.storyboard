@@ -143,29 +143,78 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4o-5p-gaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="1766"/>
+            <point key="canvasLocation" x="2403" y="1619"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
+        <scene sceneID="zQe-Un-hKL">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="ah1-D7-CDv" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cnH-Ja-bKg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-PX-6lI">
+                                <rect key="frame" x="20" y="100" width="150" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BZQ-ht-D9M" appends="YES" id="yGK-fL-Byy"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to your Spotify account:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ox-pSn">
+                                <rect key="frame" x="20" y="366" width="150" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ZGp-c2-EwO"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ocr-tc-A0P">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ZR0-Jz-Qdr"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="profileImageView" destination="WSP-PX-6lI" id="vRg-Kf-S3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iwT-yK-CMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BZQ-ht-D9M">
+                    <connections>
+                        <action selector="onTapCamera:" destination="ah1-D7-CDv" id="5s6-7i-iUz"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1419" y="2328"/>
+        </scene>
+        <!--Timeline View Controller-->
         <scene sceneID="GtW-Be-5OM">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="CzU-qU-ldP" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="CzU-qU-ldP" customClass="TimelineViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cls-5V-Htf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="THU-ch-gZe"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nlw-lW-PaN"/>
+                    <navigationItem key="navigationItem" id="nlw-lW-PaN">
+                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="svM-aM-O4w">
+                            <connections>
+                                <segue destination="ah1-D7-CDv" kind="show" id="gmU-Es-d50"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQq-68-bmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709" y="1766"/>
+            <point key="canvasLocation" x="1419" y="1619"/>
         </scene>
-        <!--Item-->
+        <!--Song Selection-->
         <scene sceneID="EJv-PX-1Jz">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="YcR-sK-Rw8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FBn-6L-hfi"/>
+                    <tabBarItem key="tabBarItem" title="Song Selection" image="music.house.fill" catalog="system" id="FBn-6L-hfi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SnR-WY-HuS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -176,13 +225,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbl-R5-sYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="962"/>
+            <point key="canvasLocation" x="2403" y="917"/>
         </scene>
-        <!--Item-->
+        <!--Reviews-->
         <scene sceneID="qER-RA-hFn">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="ycb-TM-oiq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="75s-93-kM9"/>
+                    <tabBarItem key="tabBarItem" title="Reviews" image="message.fill" catalog="system" id="75s-93-kM9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AqH-Cg-fXU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -193,7 +242,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vj-UF-3t0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2709" y="962"/>
+            <point key="canvasLocation" x="1420" y="918"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eGu-jg-Xdq">
@@ -206,8 +255,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="YcR-sK-Rw8" kind="relationship" relationship="viewControllers" id="Gul-dv-nk5"/>
                         <segue destination="ycb-TM-oiq" kind="relationship" relationship="viewControllers" id="Tlj-jE-J1S"/>
+                        <segue destination="YcR-sK-Rw8" kind="relationship" relationship="viewControllers" id="YBl-3L-J57"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C1U-p0-fdP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -218,4 +267,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="gCg-Q4-lP3"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
+        <image name="music.house.fill" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+    </resources>
 </document>
