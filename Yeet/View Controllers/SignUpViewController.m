@@ -62,7 +62,7 @@
             } else {
                 NSLog(@"User registered successfully");
                     
-                [self performSegueWithIdentifier:@"LoginSegue" sender:nil];
+                [self performSegueWithIdentifier:@"ProfileSegue" sender:nil];
 
                     // manually segue to logged in view
                 }

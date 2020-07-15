@@ -7,10 +7,14 @@
 //
 
 #import "ProfileViewController.h"
+#import "SceneDelegate.h"
+#import <Parse/Parse.h>
+#import "LoginViewController.h"
+#import "AppDelegate.h"
 
 @interface ProfileViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 
 
 @end
@@ -46,6 +50,8 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     self.profileImageView.image = editedImage;
+    //add the image to parse here
+    
     // Do something with the images (based on your use case)
     
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -65,6 +71,22 @@
     
     return newImage;
 }
+
+
+
+- (IBAction)onTapLogout:(id)sender {
+    SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    sceneDelegate.window.rootViewController = loginViewController;
+    
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
+        // PFUser.current() will now be nil
+    }];
+}
+
+
 
 /*
 #pragma mark - Navigation

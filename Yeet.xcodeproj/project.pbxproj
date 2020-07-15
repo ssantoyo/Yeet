@@ -22,6 +22,8 @@
 		8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCCD24BE446A00B3977D /* SignUpViewController.m */; };
 		8D20DCD124BE52E500B3977D /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCD024BE52E500B3977D /* ProfileViewController.m */; };
 		8D20DCD424BE69B500B3977D /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCD324BE69B500B3977D /* TimelineViewController.m */; };
+		8D20DCDA24BF57C100B3977D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCD924BF57C100B3977D /* Post.m */; };
+		8D20DCDD24BF581E00B3977D /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCDC24BF581E00B3977D /* PostCell.m */; };
 		DE7140DE52CC2B7FAACE0D6E /* Pods_Yeet_YeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +76,10 @@
 		8D20DCD024BE52E500B3977D /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		8D20DCD224BE69B500B3977D /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
 		8D20DCD324BE69B500B3977D /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		8D20DCD824BF57C100B3977D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		8D20DCD924BF57C100B3977D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		8D20DCDB24BF581E00B3977D /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		8D20DCDC24BF581E00B3977D /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.release.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.debug.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 		8D20DC9224BE049E00B3977D /* Yeet */ = {
 			isa = PBXGroup;
 			children = (
+				8D20DCD724BF574500B3977D /* Views */,
+				8D20DCD624BF573800B3977D /* Models */,
 				8D20DCC824BE13D200B3977D /* View Controllers */,
 				8D20DC9324BE049E00B3977D /* AppDelegate.h */,
 				8D20DC9424BE049E00B3977D /* AppDelegate.m */,
@@ -193,6 +201,24 @@
 				8D20DCD324BE69B500B3977D /* TimelineViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8D20DCD624BF573800B3977D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D20DCD824BF57C100B3977D /* Post.h */,
+				8D20DCD924BF57C100B3977D /* Post.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8D20DCD724BF574500B3977D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8D20DCDB24BF581E00B3977D /* PostCell.h */,
+				8D20DCDC24BF581E00B3977D /* PostCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DF630477BF5B240D16A3E0F7 /* Frameworks */ = {
@@ -447,10 +473,12 @@
 				8D20DCD424BE69B500B3977D /* TimelineViewController.m in Sources */,
 				8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */,
 				8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */,
+				8D20DCDA24BF57C100B3977D /* Post.m in Sources */,
 				8D20DCA624BE049E00B3977D /* main.m in Sources */,
 				8D20DCD124BE52E500B3977D /* ProfileViewController.m in Sources */,
 				8D20DC9824BE049E00B3977D /* SceneDelegate.m in Sources */,
 				8D20DCCB24BE13EA00B3977D /* LoginViewController.m in Sources */,
+				8D20DCDD24BF581E00B3977D /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
