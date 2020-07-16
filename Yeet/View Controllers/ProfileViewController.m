@@ -87,7 +87,6 @@
     }];
 }
 
-/*
 - (IBAction)onTapFeed:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
     
@@ -96,7 +95,7 @@
     sceneDelegate.window.rootViewController = timelineViewController;
     
 }
-*/
+
 
 
 /*
