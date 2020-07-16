@@ -22,6 +22,7 @@
     // Do any additional setup after loading the view.
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
+    self.songTableView.rowHeight = 200;
     
 }
 

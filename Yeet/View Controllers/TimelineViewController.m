@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
+    self.timelineTableView.rowHeight = 200;
 }
 
 /*

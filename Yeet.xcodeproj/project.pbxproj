@@ -27,6 +27,7 @@
 		8D20DCE324BF8EE800B3977D /* SongViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCE224BF8EE800B3977D /* SongViewController.m */; };
 		8D20DCE624BF9A4300B3977D /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCE524BF9A4300B3977D /* SongCell.m */; };
 		8D20DCE824BFA22100B3977D /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D20DCE724BFA22100B3977D /* SpotifyiOS.framework */; };
+		8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5634F824C0C846004A6283 /* DetailsViewController.m */; };
 		DE7140DE52CC2B7FAACE0D6E /* Pods_Yeet_YeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,8 @@
 		8D20DCE424BF9A4300B3977D /* SongCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
 		8D20DCE524BF9A4300B3977D /* SongCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
 		8D20DCE724BFA22100B3977D /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
+		8D5634F724C0C846004A6283 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		8D5634F824C0C846004A6283 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.release.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.debug.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				8D20DCD324BE69B500B3977D /* TimelineViewController.m */,
 				8D20DCE124BF8EE800B3977D /* SongViewController.h */,
 				8D20DCE224BF8EE800B3977D /* SongViewController.m */,
+				8D5634F724C0C846004A6283 /* DetailsViewController.h */,
+				8D5634F824C0C846004A6283 /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -487,6 +492,7 @@
 				8D20DCD424BE69B500B3977D /* TimelineViewController.m in Sources */,
 				8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */,
 				8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */,
+				8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */,
 				8D20DCDA24BF57C100B3977D /* Post.m in Sources */,
 				8D20DCA624BE049E00B3977D /* main.m in Sources */,
 				8D20DCD124BE52E500B3977D /* ProfileViewController.m in Sources */,

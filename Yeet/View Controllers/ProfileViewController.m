@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "TimelineViewController.h"
 
 @interface ProfileViewController ()
 
@@ -86,6 +87,16 @@
     }];
 }
 
+/*
+- (IBAction)onTapFeed:(id)sender {
+    SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TimelineViewController *timelineViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+    sceneDelegate.window.rootViewController = timelineViewController;
+    
+}
+*/
 
 
 /*
