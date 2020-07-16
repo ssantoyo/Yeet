@@ -8,6 +8,7 @@
 
 #import "TimelineViewController.h"
 #import "PostCell.h"
+#import "Post.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,6 +26,14 @@
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
     self.timelineTableView.rowHeight = 200;
+/*
+    [Post postSongReview: @"this is my image" withReview:@"this is my songTitle" withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
+     ^(BOOL succeeded, NSError * _Nullable error) {
+        if (SUCCEEDED){
+            NSLog(@"post completed")
+        }
+    }];
+*/
 }
 
 /*

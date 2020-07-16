@@ -13,23 +13,27 @@
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
-@dynamic caption;
+@dynamic review;
+@dynamic songTitle;
+@dynamic artistTitle;
 @dynamic image;
-@dynamic likeCount;
-@dynamic commentCount;
+//@dynamic likeCount;
+//@dynamic commentCount;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postSongReview: ( UIImage * _Nullable )image withReview: ( NSString * _Nullable )review withSongTitle: ( NSString * _Nullable )songTitle withArtistTitle: (NSString * _Nullable )artistTitle withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
-    newPost.caption = caption;
-    newPost.likeCount = @(0);
-    newPost.commentCount = @(0);
+    newPost.review = review;
+    newPost.artistTitle = artistTitle;
+    newPost.songTitle = songTitle;
+    //newPost.likeCount = @(0);
+    //newPost.commentCount = @(0);
     
     [newPost saveInBackgroundWithBlock: completion];
 }
