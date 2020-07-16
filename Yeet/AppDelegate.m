@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <SpotifyiOS/SpotifyiOS.h>
 
 @interface AppDelegate ()
 
