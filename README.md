@@ -59,7 +59,7 @@
    * ...
 
 ## Wireframes
-<img src='http://g.recordit.co/bQqmVVzfxh.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/HH2dbjXOsq.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
 
 ### [BONUS] Digital Wireframes & Mockups
 
