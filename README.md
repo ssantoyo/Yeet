@@ -20,12 +20,32 @@
 
 ## Product Spec
 
-### 1. User Stories (Required and Optional)
+**Required FBU Must-have Stories**
+
+* [x] User can see app has multiple views
+* [x] User can log in/log out of your app as a user
+* [x] User can sign up with a new user profile
+* [ ] Your app incorporates an external library to add visual polish
+* [x] User can use the camera to take a picture and do something with the picture 
+* [ ] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
+* [x] Your app uses gesture recognizers (e.g. double tap to like, e.g. pinch to scale) 
+* [ ] Your app contains at least one more complex algorithm 
+* [x] Your app interact with a database (e.g. Parse) 
+* [x] Your app integrates with a SDK (e.g. Google Maps SDK, Facebook SDK)
 
 **Required Must-have Stories**
-
-* [fill in your required user stories here]
-* ...
+* [ ] User sees app icon in home screen and styled launch screen
+* [x] User can sign up to create a new account using Parse authentication
+* [x] User can log in and log out of his or her account
+* [ ] The current signed in user is persisted across app restarts
+* [ ] User can see 20 posts with song reviews
+* [ ] User can view profile view with the user profile picture, username, and Spotify login
+* [ ] User can view username, profile picture, username, song title, artist title, and song review on timelineview
+* [ ] User can see song selection
+* [ ] User can use the search bar to search for songs
+* [ ] User can use the search bar to look for keywords
+* [ ] User can pull to refresh post
+* [ ] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
 
 **Optional Nice-to-have Stories**
 
@@ -34,29 +54,32 @@
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login - Parse
+   * User can login
+   * User can sign up
+* Login - Spotify and Youtube
+   * User can Login
+* TimeLine
+   * User can see youtube playlist
+   * User can see profile image
+* Detail View
+   * User can see all songs within selected playlist
+   * User can being the transfer of playlist from Youtube to Spotify 
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Login/Sign up
+* Music selection
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Login/ Sign up
+   * One time login and log out w/ persisted log in
+* Music Selection
+   * Selection of playlist and toggle song selection
+ 
 
 ## Wireframes
 <img src='http://g.recordit.co/HH2dbjXOsq.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
