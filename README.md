@@ -7,16 +7,15 @@
 
 ## Overview
 ### Description
-Yeet is a moblie application for iOS where users can search songs on Spotify and post reviews for all other others to see. The purpose of this app is to allow users to get a sense of what others think about songs and for the user to share their own thoughts and opinions. 
+Yeet is a moblie application for iOS where users can search songs on Spotify and post reviews for all others to see. The purpose of this app is to allow users to get a sense of what others think about songs and for the user to share their own thoughts and opinions. 
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Lifestyle/Entertainment
 - **Mobile:** This app would be primarily developed for mobile but would a good platform to have on a computer as well. Many people typically listen to music on the go, so having it mobile is more viable. 
-- **Story:** Allows suers to search for songs and create a review based on their thoughts of what they thought about the song.
+- **Story:** Allows users to search for songs and create a review based on their thoughts of what they thought about the song.
 - **Market:** Any Individual could choose to use this app, since this app will be open to all genres it will allow for a larger scope of people to use it. 
 - **Habit:** This app can be used as often as the user likes, with it being a mobile app it can be used at any time and place. 
-- **Scope:**  First the app would start off as a song reviewer, but would potentially evolve into a music streaming application to broaden the usage. Also, growing the scope past Spotify and adding Apple Music, Amazon Music, Pandora, etc.
+- **Scope:**  First the app would start off purely for song reviews, but would potentially evolve into a music streaming application to broaden the usage. Also, growing the scope past Spotify and adding Apple Music, Amazon Music, Pandora, etc.
 
 ## Product Spec
 
@@ -49,7 +48,7 @@ Yeet is a moblie application for iOS where users can search songs on Spotify and
 
 **Optional Nice-to-have Stories**
 
-*  Optional are still TBD
+*  Optionals are still TBD
 
 ### 2. Screen Archetypes
 
