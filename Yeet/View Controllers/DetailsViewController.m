@@ -7,6 +7,7 @@
 //
 
 #import "DetailsViewController.h"
+#import "Post.h"
 
 @interface DetailsViewController ()
 
@@ -17,6 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)onTapSDK:(id)sender {
+[Post postSongReview: nil withReview:@"this is my review" withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
+ ^(BOOL succeeded, NSError * _Nullable error) {
+    if (succeeded){
+        NSLog(@"post completed");
+    } else{
+        NSLog(@"not completed post");
+    }
+}];
 }
 
 /*

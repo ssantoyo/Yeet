@@ -12,6 +12,8 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "TimelineViewController.h"
+#import "Post.h"
+#import <PFUser.h>
 
 @interface ProfileViewController ()
 
@@ -43,6 +45,13 @@
      }
      //after taken or choosen the picture you are able to go back to the original screen
      [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+    /*
+    currentUser.profile
+    
+    
+     [self. saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {         if (succeeded) {             NSLog(@"updated post");         } else {             NSLog(@"Error updating post");         }     }]; 
+     */
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {

@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) NSNumber *commentCount;
 
 + (void) postSongReview: ( UIImage * _Nullable )image withReview: ( NSString * _Nullable )review withSongTitle: ( NSString * _Nullable )songTitle withArtistTitle: (NSString * _Nullable )artistTitle withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
 @end
 
 NS_ASSUME_NONNULL_END

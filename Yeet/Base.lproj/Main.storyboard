@@ -178,7 +178,11 @@
                         <viewLayoutGuide key="safeArea" id="gtO-Vr-c4i"/>
                     </view>
                     <navigationItem key="navigationItem" id="0Yg-lE-sZU">
-                        <barButtonItem key="rightBarButtonItem" title="Share" id="5Eo-5F-QS9"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="5Eo-5F-QS9">
+                            <connections>
+                                <action selector="onTapSDK:" destination="fzX-uD-fFO" id="mfw-vV-QaR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3D-Nq-Cd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -324,7 +328,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="Q5k-mN-Wxk">
+                                <searchBar key="tableHeaderView" contentMode="redraw" text="" id="Q5k-mN-Wxk">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -385,6 +389,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="Q5k-mN-Wxk" id="phJ-9g-0KD"/>
                         <outlet property="timelineTableView" destination="dqO-mn-8cH" id="MFi-0Q-Xde"/>
                     </connections>
                 </viewController>
