@@ -26,6 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) postSongReview: ( UIImage * _Nullable )image withReview: ( NSString * _Nullable )review withSongTitle: ( NSString * _Nullable )songTitle withArtistTitle: (NSString * _Nullable )artistTitle withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
+
 @end
 
 NS_ASSUME_NONNULL_END

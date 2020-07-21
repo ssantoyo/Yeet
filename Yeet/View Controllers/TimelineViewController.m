@@ -13,9 +13,14 @@
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
+@property (nonatomic, strong) NSMutableArray *posts;
+
+//inital properties of my search bar
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 
 @end
@@ -28,6 +33,14 @@
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
     self.timelineTableView.rowHeight = 200;
+    
+    [self getTimeline];
+    //will refresh the table view
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
+    [self.timelineTableView insertSubview:self.refreshControl atIndex:0];
+    
+    //added the local data, that can be searched 
     self.searchBar.delegate = self;
 
     self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
@@ -39,6 +52,31 @@
     self.filteredData = self.data;
  
     }
+
+-(void)getTimeline{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //reorders post from recently added post to the top
+    [query orderByDescending: @"createdAt"];
+    query.limit = 20;
+    NSLog(@"Post is being refreshed");
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *)posts;
+            //refreshes tableView data
+            [self.timelineTableView reloadData];
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.refreshControl endRefreshing];
+    }];
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -63,6 +101,12 @@
     
     return self.filteredData.count;
 }
+
+
+
+
+
+
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     

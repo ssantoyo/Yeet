@@ -11,6 +11,12 @@
 
 @interface DetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
+@property (weak, nonatomic) IBOutlet UILabel *songLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
+
+
 @end
 
 @implementation DetailsViewController
@@ -19,8 +25,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-- (IBAction)onTapSDK:(id)sender {
-[Post postSongReview: nil withReview:@"this is my review" withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
+
+
+- (IBAction)onTapShare:(id)sender {
+   
+    
+    [Post postSongReview: nil withReview:self.textView.text withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
  ^(BOOL succeeded, NSError * _Nullable error) {
     if (succeeded){
         NSLog(@"post completed");

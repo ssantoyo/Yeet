@@ -180,10 +180,16 @@
                     <navigationItem key="navigationItem" id="0Yg-lE-sZU">
                         <barButtonItem key="rightBarButtonItem" title="Share" id="5Eo-5F-QS9">
                             <connections>
-                                <action selector="onTapSDK:" destination="fzX-uD-fFO" id="mfw-vV-QaR"/>
+                                <action selector="onTapShare:" destination="fzX-uD-fFO" id="flW-Wm-9QE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="albumImageView" destination="8dc-8p-Xe6" id="wEd-hF-5eZ"/>
+                        <outlet property="artistLabel" destination="kub-QA-bih" id="aQL-ku-d8J"/>
+                        <outlet property="songLabel" destination="8jB-Oq-955" id="gLl-lA-t6U"/>
+                        <outlet property="textView" destination="of0-nI-ucx" id="3X8-F6-7HO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3D-Nq-Cd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

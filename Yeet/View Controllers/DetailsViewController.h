@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end
 

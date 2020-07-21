@@ -18,6 +18,7 @@
 @interface ProfileViewController ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+//@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
 @end
@@ -27,6 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self saveUser];
+    /*
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(saveUser) forControlEvents:UIControlEventValueChanged];
+    [self.profileImageView insertSubview:self.refreshControl atIndex:0];
+     */
 }
 
 - (IBAction)onTapCamera:(id)sender {
@@ -46,13 +54,18 @@
      //after taken or choosen the picture you are able to go back to the original screen
      [self presentViewController:imagePickerVC animated:YES completion:nil];
     
-    /*
-    currentUser.profile
     
-    
-     [self. saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {         if (succeeded) {             NSLog(@"updated post");         } else {             NSLog(@"Error updating post");         }     }]; 
-     */
 }
+
+-(void)saveUser{
+    
+    PFUser.currentUser[@"profilepicture"] = [Post getPFFileFromImage: self.profileImageView.image];
+    [PFUser.currentUser saveInBackground];
+    
+    //this is where you will fetch data for profilepicture
+    
+}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -61,7 +74,7 @@
     
     self.profileImageView.image = editedImage;
     //add the image to parse here
-    
+    [self saveUser];
     // Do something with the images (based on your use case)
     
     // Dismiss UIImagePickerController to go back to your original view controller
