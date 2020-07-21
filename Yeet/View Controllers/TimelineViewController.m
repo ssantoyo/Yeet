@@ -75,7 +75,14 @@
     }];
 }
 
-
+-(void)getUserData{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    //reorders post from recently added post to the top
+    [query orderByDescending: @"createdAt"];
+    query.limit = 20;
+    NSLog(@"Post is being refreshed");
+}
 
 
 /*
@@ -92,6 +99,10 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     
+    Post *post = self.posts[indexPath.row];
+    cell.post = post;
+    
+    cell.reviewLabel.text = post.review;
     //cell.textLabel.text = self.filteredData[indexPath.row];
 
     return cell;

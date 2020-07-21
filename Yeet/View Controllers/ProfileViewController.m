@@ -14,10 +14,11 @@
 #import "TimelineViewController.h"
 #import "Post.h"
 #import <PFUser.h>
+#import "PFImageView.h"
 
 @interface ProfileViewController ()
 
-@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet PFImageView *profileImageView;
 //@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 
@@ -30,6 +31,7 @@
     // Do any additional setup after loading the view.
     
     [self saveUser];
+    
     /*
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(saveUser) forControlEvents:UIControlEventValueChanged];
@@ -58,9 +60,16 @@
 }
 
 -(void)saveUser{
+
+    PFUser *user = [PFUser currentUser];
+    self.profileImageView.file = nil;
+    self.profileImageView.file = user[@"profilepicture"];
+    [self.profileImageView loadInBackground];
+    self.profileImageView.layer.masksToBounds =true;
+    self.profileImageView.layer.cornerRadius =32;
     
-    PFUser.currentUser[@"profilepicture"] = [Post getPFFileFromImage: self.profileImageView.image];
-    [PFUser.currentUser saveInBackground];
+    //= [Post getPFFileFromImage: self.profileImageView.image];
+    //[PFUser.currentUser saveInBackground];
     
     //this is where you will fetch data for profilepicture
     

@@ -30,7 +30,7 @@
 
 
 - (IBAction)onTapShare:(id)sender {
-   
+    if(self.textView.hasText != nil){
     
     [Post postSongReview: nil withReview:self.textView.text withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
  ^(BOOL succeeded, NSError * _Nullable error) {
@@ -46,7 +46,8 @@
         NSLog(@"not completed post");
         NSLog(@"%@", error.localizedDescription);
     }
-}];
+    }];
+    }
 }
 
 /*

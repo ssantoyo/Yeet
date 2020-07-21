@@ -51,7 +51,7 @@ static NSString * const tokenRefreshURL = @"https://yeetfb.herokuapp.com/api/ref
     self.configuration.playURI = @"";
     self.appRemote = [[SPTAppRemote alloc] initWithConfiguration:self.configuration logLevel:SPTAppRemoteLogLevelDebug];
     self.appRemote.delegate = self;
-}
+    }
 
 -(void)confirmSession{
     // verifys a session, and open the Spotify app if available
