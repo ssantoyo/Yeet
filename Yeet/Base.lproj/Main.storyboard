@@ -381,6 +381,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="atristNameLabel" destination="Jzh-jC-142" id="AnN-QR-fOl"/>
+                                            <outlet property="reviewLabel" destination="kqg-ND-THD" id="4RS-nn-U65"/>
+                                            <outlet property="songNameLabel" destination="sVj-If-Ddb" id="ig9-tG-Mff"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

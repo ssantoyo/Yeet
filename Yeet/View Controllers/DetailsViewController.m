@@ -8,6 +8,8 @@
 
 #import "DetailsViewController.h"
 #import "Post.h"
+#import "SceneDelegate.h"
+#import "TimelineViewController.h"
 
 @interface DetailsViewController ()
 
@@ -32,10 +34,17 @@
     
     [Post postSongReview: nil withReview:self.textView.text withSongTitle:@"this is my songTitle" withArtistTitle: @"this is my artistTitle" withCompletion:
  ^(BOOL succeeded, NSError * _Nullable error) {
-    if (succeeded){
+    if (!error){
         NSLog(@"post completed");
+        //[self dismissViewControllerAnimated:YES completion:nil];
+        SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TimelineViewController *timelineViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+        sceneDelegate.window.rootViewController = timelineViewController;
     } else{
         NSLog(@"not completed post");
+        NSLog(@"%@", error.localizedDescription);
     }
 }];
 }
