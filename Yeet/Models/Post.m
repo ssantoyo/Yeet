@@ -24,7 +24,11 @@
     return @"Post";
 }
 
-+ (void) postSongReview: ( UIImage * _Nullable )image withReview: ( NSString * _Nullable )review withSongTitle: ( NSString * _Nullable )songTitle withArtistTitle: (NSString * _Nullable )artistTitle withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postSongReview: ( UIImage * _Nullable )image
+             withReview: ( NSString * _Nullable )review
+          withSongTitle: ( NSString * _Nullable )songTitle
+        withArtistTitle: (NSString * _Nullable )artistTitle
+         withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];

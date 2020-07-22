@@ -265,18 +265,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-PX-6lI" customClass="PFImageView">
+                                <rect key="frame" x="132" y="94.5" width="150" height="173"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="BZQ-ht-D9M" appends="YES" id="yGK-fL-Byy"/>
+                                </connections>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-wG-PEE">
                                 <rect key="frame" x="44" y="570" width="327" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Listen on Spotify"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K58-Jm-WGz">
-                                <rect key="frame" x="145" y="285" width="125" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login to your Spotify account:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ox-pSn">
                                 <rect key="frame" x="121" y="494" width="173" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -284,14 +285,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-PX-6lI" customClass="PFImageView">
-                                <rect key="frame" x="132" y="103.5" width="150" height="173"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K58-Jm-WGz">
+                                <rect key="frame" x="143" y="276" width="128" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="BZQ-ht-D9M" appends="YES" id="yGK-fL-Byy"/>
-                                </connections>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZGp-c2-EwO"/>
@@ -309,7 +309,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileImageView" destination="WSP-PX-6lI" id="vRg-Kf-S3g"/>
+                        <outlet property="profileImageView" destination="WSP-PX-6lI" id="mwi-2C-Hn3"/>
+                        <outlet property="usernameLabel" destination="K58-Jm-WGz" id="61I-Lq-fD3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwT-yK-CMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -382,10 +383,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="atristNameLabel" destination="Jzh-jC-142" id="AnN-QR-fOl"/>
-                                            <outlet property="authorLabel" destination="sKO-AP-BUg" id="MP2-8k-oUm"/>
-                                            <outlet property="ppImageView" destination="YO2-2u-7Ii" id="fYZ-Yc-yaa"/>
                                             <outlet property="reviewLabel" destination="kqg-ND-THD" id="4RS-nn-U65"/>
                                             <outlet property="songNameLabel" destination="sVj-If-Ddb" id="ig9-tG-Mff"/>
+                                            <outlet property="userImageView" destination="YO2-2u-7Ii" id="wZs-eo-GyH"/>
+                                            <outlet property="userLabel" destination="sKO-AP-BUg" id="iCL-MH-eEu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

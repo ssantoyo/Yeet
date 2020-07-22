@@ -9,11 +9,15 @@
 #import "TimelineViewController.h"
 #import "PostCell.h"
 #import "Post.h"
+#import "ProfileViewController.h"
+#import <PFUser.h>
+#import <PFImageView.h>
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
+
 
 //inital properties of my search bar
 @property (strong, nonatomic) NSArray *data;
@@ -75,6 +79,9 @@
     }];
 }
 
+
+
+/*
 -(void)getUserData{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
@@ -83,7 +90,7 @@
     query.limit = 20;
     NSLog(@"Post is being refreshed");
 }
-
+*/
 
 /*
 #pragma mark - Navigation

@@ -18,8 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *atristNameLabel;
-@property (weak, nonatomic) IBOutlet PFImageView *ppImageView;
-@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+
 
 
 

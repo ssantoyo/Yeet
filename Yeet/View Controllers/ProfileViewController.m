@@ -18,8 +18,9 @@
 
 @interface ProfileViewController ()
 
-@property (strong, nonatomic) IBOutlet PFImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 //@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 
 @end
@@ -31,7 +32,10 @@
     // Do any additional setup after loading the view.
     
     [self saveUser];
-    
+    //PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
+   // PFUser *user = [PFUser currentUser];
+   // self.profileImageView.file = nil;
+    //self.profileImageView.file = user[@"userimage"];
     /*
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(saveUser) forControlEvents:UIControlEventValueChanged];
@@ -60,19 +64,19 @@
 }
 
 -(void)saveUser{
-
+    //PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
+   // [PFUser.currentUser saveInBackground];
+    
+    
     PFUser *user = [PFUser currentUser];
     self.profileImageView.file = nil;
-    self.profileImageView.file = user[@"profilepicture"];
+    self.profileImageView.file = user[@"userimage"];
     [self.profileImageView loadInBackground];
     self.profileImageView.layer.masksToBounds =true;
     self.profileImageView.layer.cornerRadius =32;
     
-    //= [Post getPFFileFromImage: self.profileImageView.image];
-    //[PFUser.currentUser saveInBackground];
-    
-    //this is where you will fetch data for profilepicture
-    
+    self.usernameLabel.text = nil;
+    self.usernameLabel.text = user[@"username"];
 }
 
 
@@ -83,7 +87,12 @@
     
     self.profileImageView.image = editedImage;
     //add the image to parse here
-    [self saveUser];
+   // [self saveUser];
+    
+    PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
+       [PFUser.currentUser saveInBackground];
+    
+    
     // Do something with the images (based on your use case)
     
     // Dismiss UIImagePickerController to go back to your original view controller
