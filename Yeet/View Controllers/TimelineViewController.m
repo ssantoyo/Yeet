@@ -10,6 +10,7 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
 #import <PFUser.h>
 #import <PFImageView.h>
 
@@ -17,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
+
 
 
 //inital properties of my search bar
@@ -63,6 +65,8 @@
     //reorders post from recently added post to the top
     [query orderByDescending: @"createdAt"];
     query.limit = 20;
+    [query includeKey:@"author"];
+
     NSLog(@"Post is being refreshed");
 
     // fetch data asynchronously
@@ -79,18 +83,6 @@
     }];
 }
 
-
-
-/*
--(void)getUserData{
-    // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    //reorders post from recently added post to the top
-    [query orderByDescending: @"createdAt"];
-    query.limit = 20;
-    NSLog(@"Post is being refreshed");
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -110,6 +102,15 @@
     cell.post = post;
     
     cell.reviewLabel.text = post.review;
+    
+    cell.userLabel.text = nil;
+    cell.userLabel.text = cell.post.author[@"username"];
+    
+    cell.userImageView.file = nil;
+    cell.userImageView.file = cell.post.author[@"userimage"];
+    [cell.userImageView loadInBackground];
+    cell.userImageView.layer.masksToBounds = true;
+    cell.userImageView.layer.cornerRadius = 25;
     //cell.textLabel.text = self.filteredData[indexPath.row];
 
     return cell;
