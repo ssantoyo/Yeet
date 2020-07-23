@@ -13,11 +13,13 @@ Yeet is a moblie application for iOS where users can search songs on Spotify and
 - **Category:** Lifestyle/Entertainment
 - **Mobile:** This app would be primarily developed for mobile but would a good platform to have on a computer as well. Many people typically listen to music on the go, so having it mobile is more viable. 
 - **Story:** Allows users to search for songs and create a review based on their thoughts of what they thought about the song.
-- **Market:** Any Individual could choose to use this app, since this app will be open to all genres it will allow for a larger scope of people to use it. 
+- **Market:** Any music lovers and critics intersted in getting more insight about music and share opinions about the songs, intended for any age group and any all genres of music.  
 - **Habit:** This app can be used as often as the user likes, with it being a mobile app it can be used at any time and place. 
 - **Scope:**  First the app would start off purely for song reviews, but would potentially evolve into a music streaming application to broaden the usage. Also, growing the scope past Spotify and adding Apple Music, Amazon Music, Pandora, etc.
 
 ## Product Spec
+
+Any Individual could choose to use this app, since this app will be open to all genres it will allow for a larger scope of people to use it.
 
 **Required FBU Must-have Stories**
 
