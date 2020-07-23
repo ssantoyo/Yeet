@@ -123,6 +123,24 @@ This section includes the data objects that will be used for the app
 | artist | string  | name of the artist            |
 
 ### Networking
-- [Add list of network requests by screen ]
+
+## List of network requests by screen
+* Login Screen
+   * (Create/POST) Create a new user object
+   
+* Timeline Screen
+   * (Read/GET) Query posts for user's feed
+   * (Read/GET) Query posts by user
+
+* Song Selection Screen
+   * (Read/GET) Query List all songs where user is author of account
+   
+* Create Post/Details Screen
+   * (Create/POST) Create a new post object
+   * (Create/POST) Create a new review on a post
+   
+* Profile Screen
+   * (Read/GET) Query logged in user object
+   
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
