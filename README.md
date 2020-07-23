@@ -33,17 +33,17 @@ Yeet is a moblie application for iOS where users can search songs on Spotify and
 * [x] Your app integrates with a SDK (e.g. Google Maps SDK, Facebook SDK)
 
 **Required Must-have Stories**
-* [ ] User sees app icon in home screen and styled launch screen
+* [x] User sees app icon in home screen and styled launch screen
 * [x] User can sign up to create a new account using Parse authentication
 * [x] User can log in and log out of his or her account
 * [x] The current signed in user is persisted across app restarts
 * [ ] User can see 20 posts with song reviews
-* [ ] User can view profile view with the user profile picture, username, and Spotify login
+* [x] User can view profile view with the user profile picture, username, and Spotify login
 * [ ] User can view username, profile picture, username, song title, artist title, and song review on timelineview
 * [ ] User can see song selection
 * [ ] User can use the search bar to search for songs
 * [ ] User can use the search bar to look for keywords
-* [ ] User can pull to refresh post
+* [x] User can pull to refresh post
 * [ ] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
 
 **Optional Nice-to-have Stories**
