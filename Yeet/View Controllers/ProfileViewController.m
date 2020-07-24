@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 //@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-
+@property (strong,nonatomic) AppDelegate *delegate;
 
 @end
 
@@ -30,8 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
     [self saveUser];
+    
+    
     //PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
    // PFUser *user = [PFUser currentUser];
    // self.profileImageView.file = nil;
@@ -135,6 +138,11 @@
     sceneDelegate.window.rootViewController = timelineViewController;
     
 }
+
+- (IBAction)onTapSpotify:(id)sender {
+    [self.delegate authorizationLogin];
+}
+
 
 
 

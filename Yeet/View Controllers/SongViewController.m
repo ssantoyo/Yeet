@@ -8,10 +8,14 @@
 
 #import "SongViewController.h"
 #import "PostCell.h"
+#import "APIManager.h"
+#import "AppDelegate.h"
 
 @interface SongViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *songTableView;
+@property (strong,nonatomic) AppDelegate *delegate;
+@property (weak, nonatomic) NSDictionary *trackInfo;
 
 @end
 
@@ -19,13 +23,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //stores session information for the Spotify SDK
+    self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
     self.songTableView.rowHeight = 200;
     
+    [self initDetails];
+    
 }
 
+
+-(void)initDetails{
+    //insitantiating the APIManger and initializing it with our accessToken
+    //The object now has the auth credential and can make the requests to the API
+    APIManager *apimanager = [[APIManager alloc] initWithToken:self.delegate.sessionManager.session.accessToken];
+    
+    
+    //stores the returned data from the API to local property trackInfo
+    [apimanager getTrack: ^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
+        self.trackInfo = data;
+           
+    }];
+}
 /*
 #pragma mark - Navigation
 

@@ -28,6 +28,8 @@
 		8D20DCE624BF9A4300B3977D /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DCE524BF9A4300B3977D /* SongCell.m */; };
 		8D20DCE824BFA22100B3977D /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D20DCE724BFA22100B3977D /* SpotifyiOS.framework */; };
 		8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5634F824C0C846004A6283 /* DetailsViewController.m */; };
+		8D5E047D24CA049900EAE9F8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E047C24CA049900EAE9F8 /* Song.m */; };
+		8D71BEDC24C8E29100093B72 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D71BEDB24C8E29100093B72 /* APIManager.m */; };
 		DE7140DE52CC2B7FAACE0D6E /* Pods_Yeet_YeetUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +93,10 @@
 		8D20DCE724BFA22100B3977D /* SpotifyiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpotifyiOS.framework; sourceTree = "<group>"; };
 		8D5634F724C0C846004A6283 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		8D5634F824C0C846004A6283 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		8D5E047B24CA049900EAE9F8 /* Song.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		8D5E047C24CA049900EAE9F8 /* Song.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		8D71BEDA24C8E29100093B72 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		8D71BEDB24C8E29100093B72 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		8E8E53B0CD0046202C5CC437 /* Pods-YeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.release.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.release.xcconfig"; sourceTree = "<group>"; };
 		CA4B14A792DB111744CCD3B7 /* Pods-Yeet-YeetUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.debug.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E64B7BB63E07AA882C9ACC3F /* Pods-YeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YeetTests.debug.xcconfig"; path = "Target Support Files/Pods-YeetTests/Pods-YeetTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -215,6 +221,7 @@
 				8D20DCE224BF8EE800B3977D /* SongViewController.m */,
 				8D5634F724C0C846004A6283 /* DetailsViewController.h */,
 				8D5634F824C0C846004A6283 /* DetailsViewController.m */,
+				8D71BED924C8DB2900093B72 /* API */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -224,6 +231,8 @@
 			children = (
 				8D20DCD824BF57C100B3977D /* Post.h */,
 				8D20DCD924BF57C100B3977D /* Post.m */,
+				8D5E047B24CA049900EAE9F8 /* Song.h */,
+				8D5E047C24CA049900EAE9F8 /* Song.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -237,6 +246,15 @@
 				8D20DCE524BF9A4300B3977D /* SongCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8D71BED924C8DB2900093B72 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				8D71BEDA24C8E29100093B72 /* APIManager.h */,
+				8D71BEDB24C8E29100093B72 /* APIManager.m */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		DF630477BF5B240D16A3E0F7 /* Frameworks */ = {
@@ -488,10 +506,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D5E047D24CA049900EAE9F8 /* Song.m in Sources */,
 				8D20DC9B24BE049E00B3977D /* ViewController.m in Sources */,
 				8D20DCD424BE69B500B3977D /* TimelineViewController.m in Sources */,
 				8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */,
 				8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */,
+				8D71BEDC24C8E29100093B72 /* APIManager.m in Sources */,
 				8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */,
 				8D20DCDA24BF57C100B3977D /* Post.m in Sources */,
 				8D20DCA624BE049E00B3977D /* main.m in Sources */,

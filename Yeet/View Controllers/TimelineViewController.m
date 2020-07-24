@@ -18,9 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
-
-
-
 //inital properties of my search bar
 @property (strong, nonatomic) NSArray *data;
 @property (strong, nonatomic) NSArray *filteredData;

@@ -20,9 +20,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YEET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5p-Cg-ekq">
-                                <rect key="frame" x="73" y="107" width="268" height="153"/>
+                                <rect key="frame" x="93" y="133" width="229" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="99"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="90"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

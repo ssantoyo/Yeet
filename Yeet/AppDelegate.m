@@ -36,8 +36,6 @@ static NSString * const tokenRefreshURL = @"https://yeetfb.herokuapp.com/api/ref
          
          [Parse initializeWithConfiguration:config];
     
-    [self initialconfig];
-    [self confirmSession];
 
     return YES;
 }
@@ -55,7 +53,7 @@ static NSString * const tokenRefreshURL = @"https://yeetfb.herokuapp.com/api/ref
 
 -(void)confirmSession{
     // verifys a session, and open the Spotify app if available
-    SPTScope requestedScope = SPTAppRemoteControlScope;
+    SPTScope requestedScope = SPTAppRemoteControlScope | SPTPlaylistReadPrivateScope | SPTPlaylistModifyPublicScope | SPTPlaylistModifyPrivateScope |SPTUserFollowReadScope | SPTUserFollowModifyScope | SPTUserLibraryReadScope | SPTUserLibraryModifyScope | SPTUserTopReadScope | SPTUserReadEmailScope | SPTUserReadPrivateScope | SPTStreamingScope;;
     self.sessionManager = [SPTSessionManager sessionManagerWithConfiguration:self.configuration delegate:self];
 
     [self.sessionManager initiateSessionWithScope:requestedScope options:SPTDefaultAuthorizationOption];
@@ -68,6 +66,11 @@ static NSString * const tokenRefreshURL = @"https://yeetfb.herokuapp.com/api/ref
     return true;
 }
 
+
+-(void)authorizationLogin{
+    [self initialconfig];
+    [self confirmSession];
+}
 #pragma mark - UISceneSession lifecycle
 
 

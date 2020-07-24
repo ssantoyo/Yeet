@@ -10,7 +10,9 @@ target 'Yeet' do
 	pod 'Parse/UI'
 	pod 'DateTools'
 	pod 'NSDate+TimeAgo'
-
+	pod 'AFOAuth2Manager'
+	pod 'OAuth2'
+	pod 'AFNetworking'
 
   target 'YeetTests' do
     inherit! :search_paths

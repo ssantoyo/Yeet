@@ -17,6 +17,7 @@
 @property (nonatomic, strong) SPTConfiguration *configuration;
 @property (nonatomic, strong)SPTAppRemote *appRemote;
 
+-(void)authorizationLogin;
 
 @end
 
