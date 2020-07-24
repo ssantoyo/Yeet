@@ -13,11 +13,13 @@ Yeet is a moblie application for iOS where users can search songs on Spotify and
 - **Category:** Lifestyle/Entertainment
 - **Mobile:** This app would be primarily developed for mobile but would a good platform to have on a computer as well. Many people typically listen to music on the go, so having it mobile is more viable. 
 - **Story:** Allows users to search for songs and create a review based on their thoughts of what they thought about the song.
-- **Market:** Any Individual could choose to use this app, since this app will be open to all genres it will allow for a larger scope of people to use it. 
+- **Market:** Any music lovers and critics intersted in getting more insight about music and share opinions about the songs, intended for any age group and any all genres of music.  
 - **Habit:** This app can be used as often as the user likes, with it being a mobile app it can be used at any time and place. 
 - **Scope:**  First the app would start off purely for song reviews, but would potentially evolve into a music streaming application to broaden the usage. Also, growing the scope past Spotify and adding Apple Music, Amazon Music, Pandora, etc.
 
 ## Product Spec
+
+Any Individual could choose to use this app, since this app will be open to all genres it will allow for a larger scope of people to use it.
 
 **Required FBU Must-have Stories**
 
@@ -33,17 +35,17 @@ Yeet is a moblie application for iOS where users can search songs on Spotify and
 * [x] Your app integrates with a SDK (e.g. Google Maps SDK, Facebook SDK)
 
 **Required Must-have Stories**
-* [ ] User sees app icon in home screen and styled launch screen
+* [x] User sees app icon in home screen and styled launch screen
 * [x] User can sign up to create a new account using Parse authentication
 * [x] User can log in and log out of his or her account
 * [x] The current signed in user is persisted across app restarts
 * [ ] User can see 20 posts with song reviews
-* [ ] User can view profile view with the user profile picture, username, and Spotify login
+* [x] User can view profile view with the user profile picture, username, and Spotify login
 * [ ] User can view username, profile picture, username, song title, artist title, and song review on timelineview
 * [ ] User can see song selection
 * [ ] User can use the search bar to search for songs
 * [ ] User can use the search bar to look for keywords
-* [ ] User can pull to refresh post
+* [x] User can pull to refresh post
 * [ ] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
 
 **Optional Nice-to-have Stories**
@@ -123,6 +125,24 @@ This section includes the data objects that will be used for the app
 | artist | string  | name of the artist            |
 
 ### Networking
-- [Add list of network requests by screen ]
+
+## List of network requests by screen
+* Login Screen
+   * (Create/POST) Create a new user object
+   
+* Timeline Screen
+   * (Read/GET) Query posts for user's feed
+   * (Read/GET) Query posts by user
+
+* Song Selection Screen
+   * (Read/GET) Query List all songs where user is author of account
+   
+* Create Post/Details Screen
+   * (Create/POST) Create a new post object
+   * (Create/POST) Create a new review on a post
+   
+* Profile Screen
+   * (Read/GET) Query logged in user object
+   
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
