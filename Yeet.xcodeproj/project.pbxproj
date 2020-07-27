@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		58EFF495AE27A3DCD4263CBC /* Pods_YeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27741C3CD52C1ECFFD06B43A /* Pods_YeetTests.framework */; };
 		6A3C63AF65BEE81BBD80F585 /* Pods_Yeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B49D03898C3DCFCAD399008 /* Pods_Yeet.framework */; };
+		8D1CD46724CCE8DE00CB184C /* CheckStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CD46624CCE8DE00CB184C /* CheckStatusVC.m */; };
 		8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9424BE049E00B3977D /* AppDelegate.m */; };
 		8D20DC9824BE049E00B3977D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9724BE049E00B3977D /* SceneDelegate.m */; };
-		8D20DC9B24BE049E00B3977D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D20DC9A24BE049E00B3977D /* ViewController.m */; };
 		8D20DC9E24BE049E00B3977D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D20DC9C24BE049E00B3977D /* Main.storyboard */; };
 		8D20DCA024BE049E00B3977D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D20DC9F24BE049E00B3977D /* Assets.xcassets */; };
 		8D20DCA324BE049E00B3977D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D20DCA124BE049E00B3977D /* LaunchScreen.storyboard */; };
@@ -56,13 +56,13 @@
 		305E7AB28DF05B784AD17CEC /* Pods_Yeet_YeetUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yeet_YeetUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B49D03898C3DCFCAD399008 /* Pods_Yeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70789B435B721AF9D2B9F5AD /* Pods-Yeet-YeetUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yeet-YeetUITests.release.xcconfig"; path = "Target Support Files/Pods-Yeet-YeetUITests/Pods-Yeet-YeetUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D1CD46524CCE8DE00CB184C /* CheckStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckStatusVC.h; sourceTree = "<group>"; };
+		8D1CD46624CCE8DE00CB184C /* CheckStatusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckStatusVC.m; sourceTree = "<group>"; };
 		8D20DC9024BE049E00B3977D /* Yeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D20DC9324BE049E00B3977D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D20DC9424BE049E00B3977D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8D20DC9624BE049E00B3977D /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		8D20DC9724BE049E00B3977D /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		8D20DC9924BE049E00B3977D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8D20DC9A24BE049E00B3977D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8D20DC9D24BE049E00B3977D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D20DC9F24BE049E00B3977D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D20DCA224BE049E00B3977D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -177,8 +177,6 @@
 				8D20DC9424BE049E00B3977D /* AppDelegate.m */,
 				8D20DC9624BE049E00B3977D /* SceneDelegate.h */,
 				8D20DC9724BE049E00B3977D /* SceneDelegate.m */,
-				8D20DC9924BE049E00B3977D /* ViewController.h */,
-				8D20DC9A24BE049E00B3977D /* ViewController.m */,
 				8D20DC9C24BE049E00B3977D /* Main.storyboard */,
 				8D20DC9F24BE049E00B3977D /* Assets.xcassets */,
 				8D20DCA124BE049E00B3977D /* LaunchScreen.storyboard */,
@@ -221,6 +219,8 @@
 				8D20DCE224BF8EE800B3977D /* SongViewController.m */,
 				8D5634F724C0C846004A6283 /* DetailsViewController.h */,
 				8D5634F824C0C846004A6283 /* DetailsViewController.m */,
+				8D1CD46524CCE8DE00CB184C /* CheckStatusVC.h */,
+				8D1CD46624CCE8DE00CB184C /* CheckStatusVC.m */,
 				8D71BED924C8DB2900093B72 /* API */,
 			);
 			path = "View Controllers";
@@ -507,10 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5E047D24CA049900EAE9F8 /* Song.m in Sources */,
-				8D20DC9B24BE049E00B3977D /* ViewController.m in Sources */,
 				8D20DCD424BE69B500B3977D /* TimelineViewController.m in Sources */,
 				8D20DC9524BE049E00B3977D /* AppDelegate.m in Sources */,
 				8D20DCCE24BE446A00B3977D /* SignUpViewController.m in Sources */,
+				8D1CD46724CCE8DE00CB184C /* CheckStatusVC.m in Sources */,
 				8D71BEDC24C8E29100093B72 /* APIManager.m in Sources */,
 				8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */,
 				8D20DCDA24BF57C100B3977D /* Post.m in Sources */,

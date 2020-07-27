@@ -13,6 +13,7 @@
 #import <Parse/Parse.h>
 #import <PFUser.h>
 #import <PFImageView.h>
+#import "AppDelegate.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -23,6 +24,9 @@
 @property (strong, nonatomic) NSArray *filteredData;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (strong,nonatomic) AppDelegate *delegate;
+
+
 
 
 
@@ -36,6 +40,9 @@
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
     self.timelineTableView.rowHeight = 200;
+    
+    //stores session information for the Spotify SDK
+    self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     [self getTimeline];
     //will refresh the table view
@@ -53,7 +60,6 @@
                   @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
 
     self.filteredData = self.data;
- 
     }
 
 -(void)getTimeline{
@@ -79,6 +85,37 @@
         [self.refreshControl endRefreshing];
     }];
 }
+
+- (IBAction)onTapSongList:(id)sender {
+    if(self.delegate.sessionManager.session.accessToken){
+        [self performSegueWithIdentifier:@"songSegue" sender:nil];
+
+    }
+    else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Authorize app via Spotify on ProfileView Controller"
+               message:@"To view songs, app needs to be authorized via Spotify Account" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        // create an OK action
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        // handle response here.
+        }];
+        // add the OK action to the alert controller
+        [alert addAction:cancelAction];
+        
+        UIAlertAction *authorizeAction = [UIAlertAction actionWithTitle:@"Authorize" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+               // handle response here.
+            [self.delegate authorizationLogin];
+            [self performSegueWithIdentifier:@"songSegue" sender:nil];
+
+               }];
+               // add the OK action to the alert controller
+               [alert addAction:authorizeAction];
+        
+        [self presentViewController:alert animated:YES completion:^{
+        }];}
+}
+
+
 
 
 /*

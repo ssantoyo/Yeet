@@ -7,15 +7,19 @@
 //
 
 #import "SongViewController.h"
-#import "PostCell.h"
 #import "APIManager.h"
 #import "AppDelegate.h"
+#import "Song.h"
+#import "SongCell.h"
+#import "UIImageView+AFNetworking.h"
+
 
 @interface SongViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *songTableView;
 @property (strong,nonatomic) AppDelegate *delegate;
 @property (weak, nonatomic) NSDictionary *trackInfo;
+@property (nonatomic,strong) NSMutableArray *songs;
 
 @end
 
@@ -27,6 +31,8 @@
     //stores session information for the Spotify SDK
     self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
+    self.songs = [[NSMutableArray alloc] init];
+
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
     self.songTableView.rowHeight = 200;
@@ -44,10 +50,22 @@
     
     //stores the returned data from the API to local property trackInfo
     [apimanager getTrack: ^(NSDictionary * _Nonnull data, NSError * _Nonnull error) {
-        self.trackInfo = data;
-           
+        if(error){
+            NSLog(@"error: %@", [error localizedDescription]);
+        }
+        else{
+            NSArray *songs = data[@"items"];
+            for (NSDictionary *dictionary in songs) {
+                // Allocate memory for object and initialize with the dictionary
+                Song *song = [[Song alloc] initWithDictionary:dictionary[@"track"]];
+                // Add the object to the Playlist's array
+                [self.songs addObject:song];
+            }
+            [self.songTableView reloadData];
+        }
     }];
 }
+
 /*
 #pragma mark - Navigation
 
@@ -59,14 +77,45 @@
 */
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SongCell" forIndexPath:indexPath];
+    SongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SongCell" forIndexPath:indexPath];
+    
+    Song *song = self.songs[indexPath.row];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString: song.imageURL]];
+    
+    // Set poster to nil to remove the old one (when refreshing) and query for the new one
+    cell.albumIV.image = nil;
+    cell.songLabel.text = song.songName;
+    cell.artistLabel.text = song.artistName;
+    
+    // Instantiate a weak link to the cell and fade in the image in the request
+    __weak SongCell *weakSelf = cell;
+    [weakSelf.albumIV setImageWithURLRequest:request placeholderImage:nil
+                                           success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+        
+        // imageResponse will be nil if the image is cached
+        if (imageResponse) {
+            weakSelf.albumIV.alpha = 0.0;
+            weakSelf.albumIV.image = image;
+            //Animate UIImageView back to alpha 1 over 0.3sec
+            [UIView animateWithDuration:0.5 animations:^{
+                weakSelf.albumIV.alpha = 1.0;
+            }];
+        }
+        else {
+            weakSelf.albumIV.image = image;
+        }
+    }
+                                           failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+        // do something for the failure condition
+    }];
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 20;
+    return self.songs.count;
 }
 
 

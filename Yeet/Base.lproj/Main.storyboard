@@ -192,12 +192,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3D-Nq-Cd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="2362.5"/>
+            <point key="canvasLocation" x="728" y="3297"/>
         </scene>
         <!--Song View Controller-->
         <scene sceneID="xnh-Lo-OD6">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Jhj-iE-B35" customClass="SongViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SongView" modalPresentationStyle="fullScreen" id="Jhj-iE-B35" customClass="SongViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lR6-ck-Wg4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,26 +212,33 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="154" id="DR5-ZL-cMD" customClass="SongCell">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="154"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" rowHeight="157" id="DR5-ZL-cMD" customClass="SongCell">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="157"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DR5-ZL-cMD" id="Gpt-Xs-SBn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Spotify Login" translatesAutoresizingMaskIntoConstraints="NO" id="NiQ-ph-VD1">
-                                                    <rect key="frame" x="20" y="11" width="130" height="128"/>
+                                                    <rect key="frame" x="12" y="4" width="145" height="147"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of artist name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33d-bd-eiS">
-                                                    <rect key="frame" x="173" y="67" width="198" height="21"/>
+                                                    <rect key="frame" x="165" y="67" width="168" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of song title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ5-dt-iLc">
-                                                    <rect key="frame" x="173" y="11" width="183" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of song title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQ5-dt-iLc">
+                                                    <rect key="frame" x="165" y="11" width="229" height="42"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description of album name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="308-Mn-WGE">
+                                                    <rect key="frame" x="165" y="114" width="198" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -240,6 +247,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="albumIV" destination="NiQ-ph-VD1" id="2de-VR-pxR"/>
+                                            <outlet property="albumLabel" destination="308-Mn-WGE" id="Q86-qf-s4U"/>
+                                            <outlet property="artistLabel" destination="33d-bd-eiS" id="Pu9-OS-bRe"/>
+                                            <outlet property="songLabel" destination="CQ5-dt-iLc" id="g2f-Oc-jPz"/>
                                             <segue destination="fzX-uD-fFO" kind="show" id="gaa-Jv-0gm"/>
                                         </connections>
                                     </tableViewCell>
@@ -255,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4o-5p-gaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969.56521739130437" y="1644.6428571428571"/>
+            <point key="canvasLocation" x="727.536231884058" y="2505.1339285714284"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="zQe-Un-hKL">
@@ -280,13 +291,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K58-Jm-WGz">
-                                <rect key="frame" x="230" y="109" width="128" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-PX-6lI" customClass="PFImageView">
                                 <rect key="frame" x="20" y="90.5" width="150" height="173"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -295,6 +299,13 @@
                                     <outletCollection property="gestureRecognizers" destination="BZQ-ht-D9M" appends="YES" id="yGK-fL-Byy"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K58-Jm-WGz">
+                                <rect key="frame" x="196" y="109" width="128" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ZGp-c2-EwO"/>
@@ -323,7 +334,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3312" y="2363"/>
+            <point key="canvasLocation" x="2566.666666666667" y="1800.6696428571427"/>
         </scene>
         <!--Timeline View Controller-->
         <scene sceneID="GtW-Be-5OM">
@@ -350,7 +361,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKO-AP-BUg">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKO-AP-BUg">
                                                     <rect key="frame" x="146" y="21" width="86" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
@@ -398,9 +409,10 @@
                         <viewLayoutGuide key="safeArea" id="THU-ch-gZe"/>
                     </view>
                     <navigationItem key="navigationItem" id="nlw-lW-PaN">
-                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="svM-aM-O4w">
+                        <barButtonItem key="rightBarButtonItem" image="music.note" catalog="system" id="svM-aM-O4w">
                             <connections>
-                                <segue destination="ah1-D7-CDv" kind="show" id="gmn-JB-srM"/>
+                                <action selector="onTapSongList:" destination="CzU-qU-ldP" id="WEj-Xo-iYa"/>
+                                <segue destination="Jhj-iE-B35" kind="show" id="QZi-1T-KlL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -411,24 +423,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQq-68-bmM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2286.9565217391305" y="1644.6428571428571"/>
+            <point key="canvasLocation" x="728" y="1711"/>
         </scene>
-        <!--Song Selection-->
+        <!--Settings-->
         <scene sceneID="EJv-PX-1Jz">
             <objects>
                 <navigationController modalPresentationStyle="fullScreen" id="YcR-sK-Rw8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Song Selection" image="music.house.fill" catalog="system" id="FBn-6L-hfi"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="wrench" catalog="system" id="FBn-6L-hfi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SnR-WY-HuS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Jhj-iE-B35" kind="relationship" relationship="rootViewController" id="HpU-J5-l2A"/>
+                        <segue destination="ah1-D7-CDv" kind="relationship" relationship="rootViewController" id="n2a-rs-4Z6"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbl-R5-sYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="944"/>
+            <point key="canvasLocation" x="2519" y="1033"/>
         </scene>
         <!--Reviews-->
         <scene sceneID="qER-RA-hFn">
@@ -446,7 +458,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Vj-UF-3t0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2288" y="944"/>
+            <point key="canvasLocation" x="728" y="1010"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eGu-jg-Xdq">
@@ -479,25 +491,25 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ah1-D7-CDv" kind="relationship" relationship="rootViewController" id="AoI-Ic-89A"/>
+                        <segue destination="ah1-D7-CDv" kind="relationship" relationship="rootViewController" id="mBY-Tp-eem"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DHn-6m-t5F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3312" y="944"/>
+            <point key="canvasLocation" x="3465" y="1033"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gmn-JB-srM"/>
+        <segue reference="n2a-rs-4Z6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Listen on Spotify" width="860" height="356"/>
         <image name="Spotify Login" width="512" height="512"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
-        <image name="music.house.fill" catalog="system" width="128" height="106"/>
+        <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="paperplane.fill" catalog="system" width="128" height="121"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="wrench" catalog="system" width="128" height="120"/>
     </resources>
 </document>

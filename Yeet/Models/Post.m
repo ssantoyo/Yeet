@@ -17,6 +17,7 @@
 @dynamic songTitle;
 @dynamic artistTitle;
 @dynamic image;
+//@dynamic song;
 //@dynamic likeCount;
 //@dynamic commentCount;
 
@@ -26,6 +27,7 @@
 
 + (void) postSongReview: ( UIImage * _Nullable )image
              withReview: ( NSString * _Nullable )review
+             //withSong: ( Song * _Nullable )song
           withSongTitle: ( NSString * _Nullable )songTitle
         withArtistTitle: (NSString * _Nullable )artistTitle
          withCompletion: (PFBooleanResultBlock  _Nullable)completion {
@@ -36,6 +38,7 @@
     newPost.review = review;
     newPost.artistTitle = artistTitle;
     newPost.songTitle = songTitle;
+    //newPost.song = song;
     //newPost.likeCount = @(0);
     //newPost.commentCount = @(0);
     
