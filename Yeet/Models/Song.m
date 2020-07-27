@@ -10,12 +10,19 @@
 
 @implementation Song
 
+@dynamic songName;
+@dynamic artistName;
+@dynamic albumName;
+@dynamic spotifyID;
+@dynamic imageURL;
+
+
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     self = [super init];
     if (self) {
         self.songName = dictionary[@"name"];
         self.artistName= dictionary[@"artists"][0][@"name"];
-        //self.albumName = dictionary[@"album"][0];
+        self.albumName = dictionary[@"album"][@"name"];
         self.spotifyID = dictionary[@"id"];
         self.imageURL = dictionary[@"album"][@"images"][0][@"url"];
         // TODO: MISSING PROPERTIES
@@ -24,5 +31,11 @@
     }
     return self;
 }
+
++ (nonnull NSString *)parseClassName {
+    return @"Song";
+}
+
+
 
 @end

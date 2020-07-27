@@ -17,13 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) Post *post;
 @property (weak, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *atristNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *artistNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
-
-
-
-
 
 @end
 

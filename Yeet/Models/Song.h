@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Song : NSObject <PFSubclassing>
+@interface Song : PFObject <PFSubclassing>
 
 //MARK: Properties
 @property (nonatomic, strong) NSString *artistName;

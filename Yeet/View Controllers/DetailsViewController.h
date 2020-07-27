@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Song.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property(nonatomic, strong) Song *song;
 
 @end
 

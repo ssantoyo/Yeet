@@ -8,6 +8,7 @@
 
 #import "Post.h"
 
+
 @implementation Post
     
 @dynamic postID;
@@ -16,10 +17,10 @@
 @dynamic review;
 @dynamic songTitle;
 @dynamic artistTitle;
+@dynamic albumTitle;
 @dynamic image;
-//@dynamic song;
+@dynamic song;
 //@dynamic likeCount;
-//@dynamic commentCount;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -27,9 +28,10 @@
 
 + (void) postSongReview: ( UIImage * _Nullable )image
              withReview: ( NSString * _Nullable )review
-             //withSong: ( Song * _Nullable )song
+             withSong: ( Song * _Nullable )song
           withSongTitle: ( NSString * _Nullable )songTitle
         withArtistTitle: (NSString * _Nullable )artistTitle
+         withAlbumTitle: (NSString * _Nullable )albumTitle
          withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -38,9 +40,9 @@
     newPost.review = review;
     newPost.artistTitle = artistTitle;
     newPost.songTitle = songTitle;
-    //newPost.song = song;
+    newPost.albumTitle = albumTitle;
+    newPost.song = song;
     //newPost.likeCount = @(0);
-    //newPost.commentCount = @(0);
     
     [newPost saveInBackgroundWithBlock: completion];
 }

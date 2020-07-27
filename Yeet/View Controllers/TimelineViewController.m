@@ -14,6 +14,9 @@
 #import <PFUser.h>
 #import <PFImageView.h>
 #import "AppDelegate.h"
+#import "Song.h"
+#import "SongCell.h"
+#import "OpenPostViewController.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -105,8 +108,6 @@
         UIAlertAction *authorizeAction = [UIAlertAction actionWithTitle:@"Authorize" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                // handle response here.
             [self.delegate authorizationLogin];
-            [self performSegueWithIdentifier:@"songSegue" sender:nil];
-
                }];
                // add the OK action to the alert controller
                [alert addAction:authorizeAction];
@@ -118,16 +119,24 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"OpenPostView"]) {
+        OpenPostViewController *openPostViewController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.timelineTableView indexPathForCell:tappedCell];
+        Post *post = self.posts[indexPath.row];
+        openPostViewController.post = post;
+    }
    
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
@@ -136,17 +145,18 @@
     cell.post = post;
     
     cell.reviewLabel.text = post.review;
-    
+    cell.songNameLabel.text = post.songTitle;
+    cell.artistNameLabel.text = post.artistTitle;
+    cell.albumNameLabel.text = post.albumTitle;
     cell.userLabel.text = nil;
     cell.userLabel.text = cell.post.author[@"username"];
-    
     cell.userImageView.file = nil;
     cell.userImageView.file = cell.post.author[@"userimage"];
     [cell.userImageView loadInBackground];
     cell.userImageView.layer.masksToBounds = true;
-    cell.userImageView.layer.cornerRadius = 25;
+    cell.userImageView.layer.cornerRadius = 60;
     //cell.textLabel.text = self.filteredData[indexPath.row];
-
+    
     return cell;
 }
 

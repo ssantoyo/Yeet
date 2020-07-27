@@ -67,16 +67,12 @@
 }
 
 -(void)saveUser{
-    //PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
-   // [PFUser.currentUser saveInBackground];
-    
-    
     PFUser *user = [PFUser currentUser];
     self.profileImageView.file = nil;
     self.profileImageView.file = user[@"userimage"];
     [self.profileImageView loadInBackground];
     self.profileImageView.layer.masksToBounds =true;
-    self.profileImageView.layer.cornerRadius =32;
+    self.profileImageView.layer.cornerRadius = 70;
     
     self.usernameLabel.text = nil;
     self.usernameLabel.text = user[@"username"];
@@ -128,15 +124,6 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
-}
-
-- (IBAction)onTapFeed:(id)sender {
-    SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    TimelineViewController *timelineViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
-    sceneDelegate.window.rootViewController = timelineViewController;
-    
 }
 
 - (IBAction)onTapSpotify:(id)sender {

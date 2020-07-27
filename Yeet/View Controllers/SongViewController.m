@@ -12,6 +12,7 @@
 #import "Song.h"
 #import "SongCell.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
 
 @interface SongViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -66,15 +67,22 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"DetailsView"]) {
+        DetailsViewController *detailsPostViewController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.songTableView indexPathForCell:tappedCell];
+        Song *song = self.songs[indexPath.row];
+        detailsPostViewController.song = song;
+    }
 }
-*/
+
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     SongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SongCell" forIndexPath:indexPath];
@@ -87,6 +95,7 @@
     cell.albumIV.image = nil;
     cell.songLabel.text = song.songName;
     cell.artistLabel.text = song.artistName;
+    cell.albumLabel.text = song.albumName;
     
     // Instantiate a weak link to the cell and fade in the image in the request
     __weak SongCell *weakSelf = cell;
@@ -98,7 +107,7 @@
             weakSelf.albumIV.alpha = 0.0;
             weakSelf.albumIV.image = image;
             //Animate UIImageView back to alpha 1 over 0.3sec
-            [UIView animateWithDuration:0.5 animations:^{
+            [UIView animateWithDuration:1 animations:^{
                 weakSelf.albumIV.alpha = 1.0;
             }];
         }
