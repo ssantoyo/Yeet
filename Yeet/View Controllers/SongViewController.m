@@ -21,6 +21,9 @@
 @property (strong,nonatomic) AppDelegate *delegate;
 @property (weak, nonatomic) NSDictionary *trackInfo;
 @property (nonatomic,strong) NSMutableArray *songs;
+@property (nonatomic,strong) NSMutableArray *filteredSongs;
+@property (weak, nonatomic) IBOutlet UISearchBar *songSearchbar;
+
 
 @end
 
@@ -38,7 +41,11 @@
     self.songTableView.dataSource = self;
     self.songTableView.rowHeight = 200;
     
+    self.songSearchbar.delegate = self;
+
+    
     [self initDetails];
+    self.filteredSongs = self.songs;
     
 }
 
@@ -61,6 +68,7 @@
                 Song *song = [[Song alloc] initWithDictionary:dictionary[@"track"]];
                 // Add the object to the Playlist's array
                 [self.songs addObject:song];
+
             }
             [self.songTableView reloadData];
         }
@@ -87,7 +95,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     SongCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SongCell" forIndexPath:indexPath];
     
-    Song *song = self.songs[indexPath.row];
+    Song *song = self.filteredSongs[indexPath.row];
     
     NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL URLWithString: song.imageURL]];
     
@@ -124,7 +132,34 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.songs.count;
+    return self.filteredSongs.count;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Song *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject.songName containsString:searchText];
+        }];
+        self.filteredSongs = [self.songs filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.filteredSongs);
+    }
+    else {
+        self.filteredSongs = self.songs;
+    }
+    [self.songTableView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.songSearchbar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.songSearchbar.showsCancelButton = NO;
+    self.songSearchbar.text = @"";
+    [self.songSearchbar resignFirstResponder];
 }
 
 

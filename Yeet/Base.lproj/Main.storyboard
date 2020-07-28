@@ -269,6 +269,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vuY-Pl-XzY"/>
                     <connections>
+                        <outlet property="songSearchbar" destination="V5J-MB-tAE" id="oW3-kn-utw"/>
                         <outlet property="songTableView" destination="euk-jI-w1L" id="6DF-SI-Y95"/>
                     </connections>
                 </viewController>
