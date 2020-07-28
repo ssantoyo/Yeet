@@ -28,7 +28,7 @@ Any Individual could choose to use this app, since this app will be open to all 
 * [x] User can sign up with a new user profile
 * [ ] Your app incorporates an external library to add visual polish
 * [x] User can use the camera to take a picture and do something with the picture 
-* [ ] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
+* [x] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
 * [x] Your app uses gesture recognizers (e.g. double tap to like, e.g. pinch to scale) 
 * [ ] Your app contains at least one more complex algorithm 
 * [x] Your app interact with a database (e.g. Parse) 
