@@ -88,7 +88,7 @@ Any Individual could choose to use this app, since this app will be open to all 
  
 
 ## Wireframes
-<img src='http://g.recordit.co/qvmyBLjW57.giff' title='App Wireframe' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/W9QksunoBC.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
 
 ### [BONUS] Digital Wireframes & Mockups
 
