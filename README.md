@@ -50,7 +50,10 @@ Any Individual could choose to use this app, since this app will be open to all 
 
 **Optional Nice-to-have Stories**
 
-*  Optionals are still TBD
+* [ ] User can like posts from both Review Feed and enlarged Review
+* [ ] User can comment on posts
+* [ ] User can infinitely scroll through posts
+
 
 ### 2. Screen Archetypes
 
