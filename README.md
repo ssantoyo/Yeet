@@ -28,7 +28,7 @@ Any Individual could choose to use this app, since this app will be open to all 
 * [x] User can sign up with a new user profile
 * [ ] Your app incorporates an external library to add visual polish
 * [x] User can use the camera to take a picture and do something with the picture 
-* [ ] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
+* [x] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
 * [x] Your app uses gesture recognizers (e.g. double tap to like, e.g. pinch to scale) 
 * [ ] Your app contains at least one more complex algorithm 
 * [x] Your app interact with a database (e.g. Parse) 
@@ -39,18 +39,21 @@ Any Individual could choose to use this app, since this app will be open to all 
 * [x] User can sign up to create a new account using Parse authentication
 * [x] User can log in and log out of his or her account
 * [x] The current signed in user is persisted across app restarts
-* [ ] User can see 20 posts with song reviews
+* [x] User can see 20 posts with song reviews
 * [x] User can view profile view with the user profile picture, username, and Spotify login
-* [ ] User can view username, profile picture, username, song title, artist title, and song review on timelineview
-* [ ] User can see song selection
-* [ ] User can use the search bar to search for songs
+* [x] User can view username, profile picture, username, song title, artist title, and song review on timelineview
+* [x] User can see song selection
+* [x] User can use the search bar to search for songs
 * [ ] User can use the search bar to look for keywords
 * [x] User can pull to refresh post
-* [ ] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
+* [x] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
 
 **Optional Nice-to-have Stories**
 
-*  Optionals are still TBD
+* [ ] User can like posts from both Review Feed and enlarged Review
+* [ ] User can comment on posts
+* [ ] User can infinitely scroll through posts
+
 
 ### 2. Screen Archetypes
 
@@ -88,7 +91,7 @@ Any Individual could choose to use this app, since this app will be open to all 
  
 
 ## Wireframes
-<img src='http://g.recordit.co/HH2dbjXOsq.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/W9QksunoBC.gif' title='App Wireframe' width='' alt='Video Walkthrough' />
 
 ### [BONUS] Digital Wireframes & Mockups
 
