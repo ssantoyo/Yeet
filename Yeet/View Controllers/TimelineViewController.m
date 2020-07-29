@@ -17,20 +17,16 @@
 #import "Song.h"
 #import "SongCell.h"
 #import "OpenPostViewController.h"
+#import "LikeActivity.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
-//inital properties of my search bar
 @property (strong, nonatomic) NSMutableArray *filteredData;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong,nonatomic) AppDelegate *delegate;
-
-
-
-
 
 @end
 
@@ -54,15 +50,6 @@
     
     //added the local data, that can be searched 
     self.searchBar.delegate = self;
-
-    /*
-    self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
-                  @"Philadelphia, PA", @"Phoenix, AZ", @"San Diego, CA", @"San Antonio, TX",
-                  @"Dallas, TX", @"Detroit, MI", @"San Jose, CA", @"Indianapolis, IN",
-                  @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
-                  @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
-*/
-    
 }
 
 -(void)getTimeline{
@@ -91,8 +78,6 @@
     }];
 }
 
-
-
 - (IBAction)onTapSongList:(id)sender {
     if(self.delegate.sessionManager.session.accessToken){
         [self performSegueWithIdentifier:@"songSegue" sender:nil];
@@ -119,8 +104,6 @@
         [self presentViewController:alert animated:YES completion:^{
         }];}
 }
-
-
 
 
 
@@ -159,7 +142,10 @@
     [cell.userImageView loadInBackground];
     cell.userImageView.layer.masksToBounds = true;
     cell.userImageView.layer.cornerRadius = 60;
-    //cell.textLabel.text = self.filteredData[indexPath.row];
+    
+    NSNumber *number = cell.post.likeCount;
+      int value = [number intValue];
+      [cell.likeButton setTitle:[NSString stringWithFormat:@"%i", value] forState:UIControlStateNormal];
     
     return cell;
 }

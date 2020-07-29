@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *albumnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postreviewLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 
 
@@ -37,6 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self passData];
+    [self refreshData];
 }
 
 -(void)passData{
@@ -54,6 +56,31 @@
     self.userIV.layer.masksToBounds = true;
     self.userIV.layer.cornerRadius = 60;
 }
+
+-(void)refreshData {
+
+NSNumber *number = self.post.likeCount;
+int value = [number intValue];
+[self.likeButton setTitle:[NSString stringWithFormat:@"%i", value] forState:UIControlStateNormal];
+}
+
+- (IBAction)onLike:(id)sender {
+    NSNumber *number = self.post.likeCount;
+    int value = [number intValue];
+    number = [NSNumber numberWithInt:value +1];
+    self.post.likeCount = number;
+    
+    //Sends update to parse
+    [self.post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded){
+            NSLog(@"update post on Detais View");}
+        else{
+            NSLog(@"Error posting in Details View");
+        }
+    }];
+    [self refreshData];
+}
+
 
 /*
 #pragma mark - Navigation

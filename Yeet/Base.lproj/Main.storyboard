@@ -446,6 +446,16 @@
                                 <rect key="frame" x="11" y="108.5" width="125" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tac-hK-KS7">
+                                <rect key="frame" x="311" y="270" width="75" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="heart.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onLike:" destination="gMq-is-ZDa" eventType="touchUpInside" id="sHk-V4-E8o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qTD-6w-BU6"/>
@@ -454,6 +464,7 @@
                     <connections>
                         <outlet property="albumnameLabel" destination="F0b-HJ-wtw" id="zRL-Uy-uDy"/>
                         <outlet property="artistnameLabel" destination="xlL-MA-ACC" id="Vzr-0s-TGd"/>
+                        <outlet property="likeButton" destination="tac-hK-KS7" id="efH-1E-7i8"/>
                         <outlet property="postreviewLabel" destination="c0R-Jt-Axa" id="xda-xx-ITf"/>
                         <outlet property="songnameLabel" destination="iGX-o0-tJA" id="fAE-JJ-qfn"/>
                         <outlet property="userIV" destination="skF-7c-6Yo" id="5bo-gl-IeW"/>
@@ -543,17 +554,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQs-NR-gYg">
-                                                    <rect key="frame" x="21" y="138" width="75" height="22"/>
+                                                    <rect key="frame" x="29" y="145" width="75" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Button" image="heart.fill" catalog="system">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="onTapLike:" destination="ui9-ad-VhT" eventType="touchUpInside" id="cK1-vX-G8v"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumNameLabel" destination="ZFr-o7-IXT" id="9ZO-Xc-Dwc"/>
                                             <outlet property="artistNameLabel" destination="Jzh-jC-142" id="Zrc-lk-HqB"/>
+                                            <outlet property="likeButton" destination="jQs-NR-gYg" id="QF1-fj-ZDT"/>
                                             <outlet property="reviewLabel" destination="kqg-ND-THD" id="4RS-nn-U65"/>
                                             <outlet property="songNameLabel" destination="sVj-If-Ddb" id="ig9-tG-Mff"/>
                                             <outlet property="userImageView" destination="YO2-2u-7Ii" id="wZs-eo-GyH"/>

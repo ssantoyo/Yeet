@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import <Parse/Parse.h>
 #import "PFImageView.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -21,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *albumNameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @end
 

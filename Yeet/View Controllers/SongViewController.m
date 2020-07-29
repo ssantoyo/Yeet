@@ -40,10 +40,8 @@
     self.songTableView.delegate = self;
     self.songTableView.dataSource = self;
     self.songTableView.rowHeight = 200;
-    
     self.songSearchbar.delegate = self;
 
-   
     [self initDetails];
     self.filteredSongs = self.songs;
     
