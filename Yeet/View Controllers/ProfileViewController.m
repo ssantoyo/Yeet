@@ -22,6 +22,8 @@
 //@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong,nonatomic) AppDelegate *delegate;
+@property (weak, nonatomic) IBOutlet UITextField *bioField;
+
 
 @end
 
@@ -32,18 +34,9 @@
     // Do any additional setup after loading the view.
     self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
+    self.bioField.text = PFUser.currentUser[@"bio"];
     [self saveUser];
     
-    
-    //PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
-   // PFUser *user = [PFUser currentUser];
-   // self.profileImageView.file = nil;
-    //self.profileImageView.file = user[@"userimage"];
-    /*
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(saveUser) forControlEvents:UIControlEventValueChanged];
-    [self.profileImageView insertSubview:self.refreshControl atIndex:0];
-     */
 }
 
 - (IBAction)onTapCamera:(id)sender {
@@ -85,14 +78,9 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     self.profileImageView.image = editedImage;
-    //add the image to parse here
-   // [self saveUser];
     
     PFUser.currentUser[@"userimage"] = [Post getPFFileFromImage: self.profileImageView.image];
        [PFUser.currentUser saveInBackground];
-    
-    
-    // Do something with the images (based on your use case)
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -130,7 +118,15 @@
     [self.delegate authorizationLogin];
 }
 
+- (IBAction)onTapSavebio:(id)sender {
+    
+    PFUser.currentUser[@"bio"] = self.bioField.text;
+    [PFUser.currentUser saveInBackground];
+}
 
+- (IBAction)onTapEndField:(id)sender {
+    [self.view endEditing:YES];
+}
 
 
 /*

@@ -24,8 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) Song *song;
-
-//@property (nonatomic, strong) NSNumber *likeCount;
+@property (nonatomic, strong) NSNumber *likeCount;
 //@property (nonatomic, strong) NSNumber *commentCount;
 
 + (void) postSongReview: ( UIImage * _Nullable )image

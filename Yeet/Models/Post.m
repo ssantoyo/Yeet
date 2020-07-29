@@ -20,7 +20,7 @@
 @dynamic albumTitle;
 @dynamic image;
 @dynamic song;
-//@dynamic likeCount;
+@dynamic likeCount;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -42,7 +42,7 @@
     newPost.songTitle = songTitle;
     newPost.albumTitle = albumTitle;
     newPost.song = song;
-    //newPost.likeCount = @(0);
+    newPost.likeCount = @(0);
     
     [newPost saveInBackgroundWithBlock: completion];
 }

@@ -23,8 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
 //inital properties of my search bar
-@property (strong, nonatomic) NSArray *data;
-@property (strong, nonatomic) NSArray *filteredData;
+@property (strong, nonatomic) NSMutableArray *filteredData;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (strong,nonatomic) AppDelegate *delegate;
@@ -56,14 +55,15 @@
     //added the local data, that can be searched 
     self.searchBar.delegate = self;
 
+    /*
     self.data = @[@"New York, NY", @"Los Angeles, CA", @"Chicago, IL", @"Houston, TX",
                   @"Philadelphia, PA", @"Phoenix, AZ", @"San Diego, CA", @"San Antonio, TX",
                   @"Dallas, TX", @"Detroit, MI", @"San Jose, CA", @"Indianapolis, IN",
                   @"Jacksonville, FL", @"San Francisco, CA", @"Columbus, OH", @"Austin, TX",
                   @"Memphis, TN", @"Baltimore, MD", @"Charlotte, ND", @"Fort Worth, TX"];
-
-    self.filteredData = self.data;
-    }
+*/
+    
+}
 
 -(void)getTimeline{
     // construct query
@@ -79,6 +79,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
             self.posts = (NSMutableArray *)posts;
+            self.filteredData = self.posts;
+
             //refreshes tableView data
             [self.timelineTableView reloadData];
             // do something with the array of object returned by the call
@@ -88,6 +90,8 @@
         [self.refreshControl endRefreshing];
     }];
 }
+
+
 
 - (IBAction)onTapSongList:(id)sender {
     if(self.delegate.sessionManager.session.accessToken){
@@ -141,7 +145,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     
-    Post *post = self.posts[indexPath.row];
+    Post *post = self.filteredData[indexPath.row];
     cell.post = post;
     
     cell.reviewLabel.text = post.review;
@@ -175,15 +179,15 @@
     
     if (searchText.length != 0) {
         
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(NSString *evaluatedObject, NSDictionary *bindings) {
-            return [evaluatedObject containsString:searchText];
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Post *evaluatedObject, NSDictionary *bindings) {
+            return [evaluatedObject.author.username containsString:searchText];
         }];
-        self.filteredData = [self.data filteredArrayUsingPredicate:predicate];
+        self.filteredData = [self.posts filteredArrayUsingPredicate:predicate];
         
         NSLog(@"%@", self.filteredData);
     }
     else {
-        self.filteredData = self.data;
+        self.filteredData = self.posts;
     }
     [self.timelineTableView reloadData];
  

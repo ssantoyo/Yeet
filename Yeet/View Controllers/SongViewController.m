@@ -43,7 +43,7 @@
     
     self.songSearchbar.delegate = self;
 
-    
+   
     [self initDetails];
     self.filteredSongs = self.songs;
     
