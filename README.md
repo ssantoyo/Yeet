@@ -50,8 +50,8 @@ Any Individual could choose to use this app, since this app will be open to all 
 
 **Optional Nice-to-have Stories**
 
-* [ ] User can like posts from both Review Feed and enlarged Review
-* [ ] User can comment on posts
+* [x] User can like posts from both Review Feed and enlarged Review
+* [x] User can view their save and see their bio
 * [ ] User can infinitely scroll through posts
 
 
