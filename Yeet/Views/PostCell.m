@@ -47,6 +47,10 @@
         
         [self refreshData];
 }
-
-
+/*
+-(void)updateAuthorLikes{
+    int likes  = [self.post.author[@"totalLikes"] intValue] + 1;
+    self.post.author[@"totalLikes"] = @(likes);
+}
+*/
 @end

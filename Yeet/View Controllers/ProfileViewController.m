@@ -13,13 +13,14 @@
 #import "AppDelegate.h"
 #import "TimelineViewController.h"
 #import "Post.h"
+#import "PostCell.h"
 #import <PFUser.h>
 #import "PFImageView.h"
 
 @interface ProfileViewController ()
 
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
-//@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong,nonatomic) AppDelegate *delegate;
 @property (weak, nonatomic) IBOutlet UITextField *bioField;
@@ -35,6 +36,7 @@
     self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
     self.bioField.text = PFUser.currentUser[@"bio"];
+
     [self saveUser];
     
 }

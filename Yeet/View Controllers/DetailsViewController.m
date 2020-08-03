@@ -20,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
 @property (weak, nonatomic) IBOutlet UILabel *albumLabel;
-
+@property (strong, nonatomic) NSMutableArray *genres;
+@property (strong, nonatomic) NSMutableArray *genresarr;
+@property (strong, nonatomic) NSNumber *searchKey;
 
 @end
 
@@ -28,12 +30,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-
+    //Allocates a new instance of the reciving class and returns the initalized object
+    self.genresarr = [NSMutableArray new];
+    self.genres = [[NSMutableArray alloc] init];
+    self.searchKey = 0;
     
     // Set poster to nil to remove the old one (when refreshing) and query for the new one
-    self.albumImageView.image = nil;
     self.songLabel.text = self.song.songName;
     self.artistLabel.text = self.song.artistName;
     self.albumLabel.text = self.song.albumName;
@@ -41,14 +44,13 @@
     // Instantiate a weak link to the cell and fade in the image in the request
      NSURL *propicURL = [NSURL URLWithString: self.song.imageURL];
         [self.albumImageView setImageWithURL:propicURL];
-                                           
 }
 
 
 - (IBAction)onTapShare:(id)sender {
     if(self.textView.hasText){
-        [Post postSongReview:self.albumImageView.image withReview:self.textView.text withSong:self.song withSongTitle:self.songLabel.text withArtistTitle:self.artistLabel.text             withAlbumTitle:self.albumLabel.text
-            withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        [Post postSongReview:self.albumImageView.image withReview:self.textView.text withSong:self.song withGenres:self.genres withSongTitle:self.songLabel.text withArtistTitle:self.artistLabel.text withAlbumTitle:self.albumLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (!error){
             NSLog(@"post completed");
             //[self dismissViewControllerAnimated:YES completion:nil];
@@ -63,6 +65,36 @@
         }}];
     }
 }
+
+
+
+
+
+- (IBAction)tapHiphop:(id)sender {
+    [self.genres addObject: @"Hiphop"];
+}
+
+- (IBAction)tapRap:(id)sender {
+    [self.genres addObject: @"Rap"];
+}
+
+- (IBAction)tapRandB:(id)sender {
+    [self.genres addObject: @"RandB"];
+}
+
+- (IBAction)tapPop:(id)sender {
+    [self.genres addObject: @"Pop"];
+
+}
+
+- (IBAction)tapLatinX:(id)sender {
+    [self.genres addObject: @"LatinX"];
+
+}
+
+
+
+
 
 
 /*

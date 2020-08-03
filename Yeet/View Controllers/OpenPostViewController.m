@@ -20,13 +20,13 @@
 
 @interface OpenPostViewController ()
 
-@property (weak, nonatomic) IBOutlet PFImageView *userIV;
+@property (weak, nonatomic) IBOutlet PFImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UILabel *songnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *albumnameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *artistnameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *postreviewLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (weak, nonatomic) IBOutlet UILabel *postReviewLabel;
 
 
 
@@ -44,17 +44,17 @@
 -(void)passData{
     
     
-    self.postreviewLabel.text = self.post.review;
+    self.postReviewLabel.text = self.post.review;
     self.songnameLabel.text = self.post.songTitle;
     self.artistnameLabel.text = self.post.artistTitle;
     self.albumnameLabel.text = self.post.albumTitle;
     self.userLabel.text = nil;
     self.userLabel.text = self.post.author[@"username"];
-    self.userIV.file = nil;
-    self.userIV.file = self.post.author[@"userimage"];
-    [self.userIV loadInBackground];
-    self.userIV.layer.masksToBounds = true;
-    self.userIV.layer.cornerRadius = 60;
+    self.userImageView.file = nil;
+    self.userImageView.file = self.post.author[@"userimage"];
+    [self.userImageView loadInBackground];
+    self.userImageView.layer.masksToBounds = true;
+    self.userImageView.layer.cornerRadius = 60;
 }
 
 -(void)refreshData {

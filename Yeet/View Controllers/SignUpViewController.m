@@ -53,6 +53,7 @@
           // set user properties
         newUser.username = self.accountnameField.text;
         newUser.password = self.accountpasswordField.text;
+        //newUser[@"totalLikes"] = @(0);
         
             // call sign up function on the object
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {

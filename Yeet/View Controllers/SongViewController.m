@@ -112,6 +112,7 @@
         if (imageResponse) {
             weakSelf.albumIV.alpha = 0.0;
             weakSelf.albumIV.image = image;
+            
             //Animate UIImageView back to alpha 1 over 0.3sec
             [UIView animateWithDuration:1 animations:^{
                 weakSelf.albumIV.alpha = 1.0;

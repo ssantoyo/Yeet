@@ -18,11 +18,14 @@
 #import "SongCell.h"
 #import "OpenPostViewController.h"
 #import "LikeActivity.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 @property (nonatomic, strong) NSMutableArray *posts;
+@property (strong, nonatomic) NSMutableArray *genres;
+@property (strong, nonatomic) NSNumber *searchKey;
 @property (strong, nonatomic) NSMutableArray *filteredData;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -37,19 +40,25 @@
     // Do any additional setup after loading the view.
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
-    self.timelineTableView.rowHeight = 200;
+    self.timelineTableView.rowHeight = 220;
     
     //stores session information for the Spotify SDK
     self.delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     [self getTimeline];
+    self.genres = [[NSMutableArray alloc] init];
     //will refresh the table view
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(resetFilters) forControlEvents:UIControlEventValueChanged];
     [self.timelineTableView insertSubview:self.refreshControl atIndex:0];
     
     //added the local data, that can be searched 
     self.searchBar.delegate = self;
+}
+
+-(void)resetFilters{
+    [self.genres removeAllObjects];
+    [self getTimeline];
 }
 
 -(void)getTimeline{
@@ -70,13 +79,87 @@
 
             //refreshes tableView data
             [self.timelineTableView reloadData];
-            // do something with the array of object returned by the call
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
         [self.refreshControl endRefreshing];
     }];
 }
+
+-(void)getGenres{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //reorders post from recently added post to the top
+    [query orderByDescending: @"createdAt"];
+    query.limit = 20;
+    [query includeKey:@"author"];
+    
+    //Add a constrint to the query tht requires a particular key's objetc to the provided object
+    [query whereKey:@"searchKey" equalTo:self.searchKey];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.posts = (NSMutableArray *)posts;
+            self.filteredData = self.posts;
+
+            //refreshes tableView data
+            [self.timelineTableView reloadData];
+            // do something with the array of object returned by the call
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
+-(void)calculateSearch: (NSArray * _Nullable)genres{
+  //calculates a unique key based off the indexes of the genres
+    NSDictionary *genreIndex = @{
+    @"Hiphop": @(0),
+    @"Rap": @(1),
+    @"RandB": @(2),
+    @"Pop": @(3),
+    @"LatinX": @(4)
+};
+    int keyValue = 0;
+    for (NSString *genre in genres){
+    double power = pow(2,[genreIndex[genre] intValue]);
+    keyValue +=  power;
+    }
+    self.searchKey = [NSNumber numberWithInt:keyValue];
+}
+
+- (IBAction)tapRap:(id)sender {
+        [self.genres addObject: @"Rap"];
+        [self calculateSearch:self.genres];
+        [self getGenres];
+    
+}
+- (IBAction)tapHiphop:(id)sender {
+    [self.genres addObject: @"Hiphop"];
+    [self calculateSearch:self.genres];
+    [self getGenres];
+}
+- (IBAction)tapRB:(id)sender {
+    [self.genres addObject: @"RandB"];
+    [self calculateSearch:self.genres];
+    [self getGenres];
+}
+- (IBAction)tapPop:(id)sender {
+    [self.genres addObject: @"Pop"];
+    [self calculateSearch:self.genres];
+    [self getGenres];
+    
+}
+- (IBAction)tapLatinX:(id)sender {
+    [self.genres addObject: @"LatinX"];
+    [self calculateSearch:self.genres];
+    [self getGenres];
+}
+
+
+
+
 
 - (IBAction)onTapSongList:(id)sender {
     if(self.delegate.sessionManager.session.accessToken){
@@ -135,9 +218,8 @@
     cell.songNameLabel.text = post.songTitle;
     cell.artistNameLabel.text = post.artistTitle;
     cell.albumNameLabel.text = post.albumTitle;
-    cell.userLabel.text = nil;
     cell.userLabel.text = cell.post.author[@"username"];
-    cell.userImageView.file = nil;
+   // cell.userImageView.file = nil;
     cell.userImageView.file = cell.post.author[@"userimage"];
     [cell.userImageView loadInBackground];
     cell.userImageView.layer.masksToBounds = true;

@@ -24,12 +24,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *caption;
 @property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) Song *song;
+@property (nonatomic,strong) NSNumber *searchKey;
 @property (nonatomic, strong) NSNumber *likeCount;
+//@property (nonatomic,strong) NSMutableArray *genres;
 //@property (nonatomic, strong) NSNumber *commentCount;
 
 + (void) postSongReview: ( UIImage * _Nullable )image
              withReview: ( NSString * _Nullable )review
                withSong: ( Song * _Nullable )song
+            withGenres: (NSArray * _Nullable)genres
           withSongTitle: ( NSString * _Nullable )songTitle
         withArtistTitle: (NSString * _Nullable )artistTitle
          withAlbumTitle: (NSString * _Nullable )albumTitle
