@@ -29,16 +29,15 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic,strong) NSMutableArray *genres;
 //@property (nonatomic, strong) NSNumber *commentCount;
 
-+ (void) postSongReview: ( UIImage * _Nullable )image
+- (instancetype) initSongReview: ( UIImage * _Nullable )image
              withReview: ( NSString * _Nullable )review
                withSong: ( Song * _Nullable )song
             withGenres: (NSArray * _Nullable)genres
           withSongTitle: ( NSString * _Nullable )songTitle
         withArtistTitle: (NSString * _Nullable )artistTitle
-         withAlbumTitle: (NSString * _Nullable )albumTitle
-         withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+         withAlbumTitle: (NSString * _Nullable )albumTitle;
 
-+ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
+- (void) postWithCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
 @end
 

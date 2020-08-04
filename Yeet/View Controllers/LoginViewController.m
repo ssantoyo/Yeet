@@ -8,11 +8,14 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "ApplicationScheme.h"
+#import <MDCFilledTextFieldColorThemer.h>
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 
 @end
@@ -22,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
 }
 
 - (BOOL)ValidInput {

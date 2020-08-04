@@ -14,7 +14,7 @@
 #import <PFUser.h>
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
-
+#import "ApplicationScheme.h"
 
 
 
@@ -39,6 +39,9 @@
     // Do any additional setup after loading the view.
     [self passData];
     [self refreshData];
+    
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
 }
 
 -(void)passData{

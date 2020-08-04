@@ -19,6 +19,7 @@
 #import "OpenPostViewController.h"
 #import "LikeActivity.h"
 #import <QuartzCore/QuartzCore.h>
+#import "ApplicationScheme.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -37,6 +38,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     self.timelineTableView.dataSource = self;
     self.timelineTableView.delegate = self;
@@ -54,6 +56,12 @@
     
     //added the local data, that can be searched 
     self.searchBar.delegate = self;
+    
+    // TODO: Theme our interface with our colors
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
+    self.timelineTableView.backgroundColor = colorScheme.surfaceColor;
+    
 }
 
 -(void)resetFilters{
@@ -223,13 +231,17 @@
     cell.userImageView.layer.masksToBounds = true;
     cell.userImageView.layer.cornerRadius = 60;
     
+    // TODO: Theme our interface with our colors
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    cell.backgroundColor = colorScheme.surfaceColor;
+    
     NSNumber *number = cell.post.likeCount;
       int value = [number intValue];
       [cell.likeButton setTitle:[NSString stringWithFormat:@"%i", value] forState:UIControlStateNormal];
     
     return cell;
 }
-
+//Fades in post as they are being shared
 - (void)tableView:(UITableView *)tableView willDisplayCell:(PostCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (cell.isAnimated) {return;}
     
@@ -244,10 +256,6 @@
     
     return self.filteredData.count;
 }
-
-
-
-
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     

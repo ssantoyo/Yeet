@@ -13,7 +13,7 @@
 #import "SongCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
-
+#import "ApplicationScheme.h"
 
 @interface SongViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -45,6 +45,9 @@
     [self initDetails];
     self.filteredSongs = self.songs;
     
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
+    self.songTableView.backgroundColor = colorScheme.surfaceColor;
 }
 
 
@@ -102,6 +105,9 @@
     cell.songLabel.text = song.songName;
     cell.artistLabel.text = song.artistName;
     cell.albumLabel.text = song.albumName;
+    
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    cell.backgroundColor = colorScheme.surfaceColor;
     
     // Instantiate a weak link to the cell and fade in the image in the request
     __weak SongCell *weakSelf = cell;

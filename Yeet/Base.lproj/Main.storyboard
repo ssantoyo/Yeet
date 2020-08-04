@@ -97,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6Rw-XM-48b"/>
                     <connections>
+                        <outlet property="loginButton" destination="yBu-uF-ENX" id="N2Z-Hr-iNA"/>
                         <outlet property="passwordField" destination="6VJ-XZ-f9s" id="Suu-Jw-t5D"/>
                         <outlet property="usernameField" destination="iD0-IQ-SKp" id="F0r-Ta-dXe"/>
                         <segue destination="BLa-zJ-jgQ" kind="show" identifier="LoginSegue" id="2my-Pl-h3Q"/>
@@ -273,11 +274,13 @@
                             <constraint firstItem="9Iu-FQ-mO6" firstAttribute="top" secondItem="bUE-eh-QQK" secondAttribute="bottom" constant="29.5" id="3DR-QS-zwC"/>
                             <constraint firstItem="bUE-eh-QQK" firstAttribute="centerX" secondItem="8dc-8p-Xe6" secondAttribute="centerX" id="Aq6-Fb-Jld"/>
                             <constraint firstItem="8jB-Oq-955" firstAttribute="top" secondItem="8dc-8p-Xe6" secondAttribute="bottom" constant="8" id="FXm-pc-zqI"/>
+                            <constraint firstItem="8jB-Oq-955" firstAttribute="leading" secondItem="gtO-Vr-c4i" secondAttribute="leading" constant="111.5" id="HwY-sf-k5d"/>
                             <constraint firstItem="gtO-Vr-c4i" firstAttribute="trailing" secondItem="of0-nI-ucx" secondAttribute="trailing" constant="20" id="JcH-g6-eJH"/>
                             <constraint firstItem="bUE-eh-QQK" firstAttribute="top" secondItem="kub-QA-bih" secondAttribute="bottom" constant="8" id="LSK-Zw-zaH"/>
                             <constraint firstItem="8dc-8p-Xe6" firstAttribute="top" secondItem="gtO-Vr-c4i" secondAttribute="top" constant="45" id="MKP-uN-trK"/>
                             <constraint firstItem="kub-QA-bih" firstAttribute="top" secondItem="8jB-Oq-955" secondAttribute="bottom" constant="8" id="N08-l4-12U"/>
                             <constraint firstItem="kub-QA-bih" firstAttribute="centerX" secondItem="8dc-8p-Xe6" secondAttribute="centerX" id="SUj-87-dYp"/>
+                            <constraint firstItem="gtO-Vr-c4i" firstAttribute="trailing" secondItem="8jB-Oq-955" secondAttribute="trailing" constant="111.5" id="UfC-I3-lEZ"/>
                             <constraint firstItem="of0-nI-ucx" firstAttribute="top" secondItem="9Iu-FQ-mO6" secondAttribute="bottom" constant="8" id="ZU5-ft-8h0"/>
                             <constraint firstItem="8jB-Oq-955" firstAttribute="centerX" secondItem="8dc-8p-Xe6" secondAttribute="centerX" id="dJu-iU-TQY"/>
                             <constraint firstItem="9Iu-FQ-mO6" firstAttribute="centerX" secondItem="8dc-8p-Xe6" secondAttribute="centerX" id="eyu-iD-rwB"/>
@@ -851,7 +854,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hOV-yw-4Nf"/>
+        <segue reference="2my-Pl-h3Q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Listen on Spotify" width="860" height="356"/>

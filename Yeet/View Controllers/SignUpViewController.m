@@ -9,7 +9,7 @@
 #import "SignUpViewController.h"
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
-
+#import "ApplicationScheme.h"
 @interface SignUpViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *accountnameField;
@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
 }
 
 - (BOOL)ValidInput {

@@ -12,6 +12,7 @@
 #import "TimelineViewController.h"
 #import "SongViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "ApplicationScheme.h"
 
 @interface DetailsViewController ()
 
@@ -44,25 +45,31 @@
     // Instantiate a weak link to the cell and fade in the image in the request
      NSURL *propicURL = [NSURL URLWithString: self.song.imageURL];
         [self.albumImageView setImageWithURL:propicURL];
+   
+    id<MDCColorScheming> colorScheme = [ApplicationScheme sharedInstance].colorScheme;
+    self.view.backgroundColor = colorScheme.surfaceColor;
 }
 
 
 - (IBAction)onTapShare:(id)sender {
     if(self.textView.hasText){
+        Post *newPost = [[Post alloc] initSongReview:self.albumImageView.image withReview:self.textView.text withSong:self.song withGenres:self.genres withSongTitle:self.songLabel.text withArtistTitle:self.artistLabel.text withAlbumTitle:self.albumLabel.text];
         
-        [Post postSongReview:self.albumImageView.image withReview:self.textView.text withSong:self.song withGenres:self.genres withSongTitle:self.songLabel.text withArtistTitle:self.artistLabel.text withAlbumTitle:self.albumLabel.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (!error){
-            NSLog(@"post completed");
-            //[self dismissViewControllerAnimated:YES completion:nil];
-            SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
-            
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            TimelineViewController *timelineViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
-            sceneDelegate.window.rootViewController = timelineViewController;
-        } else{
-            NSLog(@"not completed post");
-            NSLog(@"%@", error.localizedDescription);
-        }}];
+        
+        [newPost postWithCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if (!error){
+                NSLog(@"post completed");
+                //[self dismissViewControllerAnimated:YES completion:nil];
+                SceneDelegate *sceneDelegate = (SceneDelegate *) self.view.window.windowScene.delegate;
+                
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                TimelineViewController *timelineViewController = [storyboard instantiateViewControllerWithIdentifier:@"TimelineViewController"];
+                sceneDelegate.window.rootViewController = timelineViewController;
+            } else{
+                NSLog(@"not completed post");
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }];
     }
 }
 

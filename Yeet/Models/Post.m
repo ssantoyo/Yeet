@@ -7,7 +7,7 @@
 //
 
 #import "Post.h"
-
+#import "Utils.h"
 
 @implementation Post
     
@@ -27,27 +27,33 @@
     return @"Post";
 }
 
-+ (void) postSongReview: ( UIImage * _Nullable )image
+- (instancetype) initSongReview: ( UIImage * _Nullable )image
              withReview: ( NSString * _Nullable )review
                withSong: ( Song * _Nullable )song
              withGenres: (NSArray * _Nullable)genres
           withSongTitle: ( NSString * _Nullable )songTitle
         withArtistTitle: (NSString * _Nullable )artistTitle
-         withAlbumTitle: (NSString * _Nullable )albumTitle
-         withCompletion: (PFBooleanResultBlock  _Nullable)completion {
+         withAlbumTitle: (NSString * _Nullable )albumTitle {
     
-    Post *newPost = [Post new];
-    newPost.image = [self getPFFileFromImage:image];
-    newPost.author = [PFUser currentUser];
-    newPost.review = review;
-    newPost.artistTitle = artistTitle;
-    newPost.songTitle = songTitle;
-    newPost.albumTitle = albumTitle;
-    newPost.song = song;
-    newPost.searchKey = [newPost calculateSearch:genres];
-    newPost.likeCount = @(0);
-    
-    [newPost saveInBackgroundWithBlock: completion];
+    //initalizes an object 
+    self = [super init];
+    if (self) {
+        self.image = [Utils getPFFileFromImage:image];
+           self.author = [PFUser currentUser];
+           self.review = review;
+           self.artistTitle = artistTitle;
+           self.songTitle = songTitle;
+           self.albumTitle = albumTitle;
+           self.song = song;
+           self.searchKey = [self calculateSearch:genres];
+           self.likeCount = @(0);
+    }
+    return self;
+}
+
+- (void) postWithCompletion: (PFBooleanResultBlock  _Nullable)completion
+{
+ [self saveInBackgroundWithBlock: completion];
 }
 
 -(NSNumber *)calculateSearch: (NSArray * _Nullable)genres{
@@ -66,22 +72,5 @@
     }
     return  [NSNumber numberWithInt:keyValue];
 }
-
-+ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
- 
-    // check if image is not nil
-    if (!image) {
-        return nil;
-    }
-    
-    NSData *imageData = UIImagePNGRepresentation(image);
-    // get image data and check if that is not nil
-    if (!imageData) {
-        return nil;
-    }
-    
-    return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
-}
-
 
 @end
