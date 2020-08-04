@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *userImageView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (assign, nonatomic) BOOL isAnimated;
+
 
 @end
 

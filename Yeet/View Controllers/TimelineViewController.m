@@ -133,7 +133,6 @@
         [self.genres addObject: @"Rap"];
         [self calculateSearch:self.genres];
         [self getGenres];
-    
 }
 - (IBAction)tapHiphop:(id)sender {
     [self.genres addObject: @"Hiphop"];
@@ -219,7 +218,6 @@
     cell.artistNameLabel.text = post.artistTitle;
     cell.albumNameLabel.text = post.albumTitle;
     cell.userLabel.text = cell.post.author[@"username"];
-   // cell.userImageView.file = nil;
     cell.userImageView.file = cell.post.author[@"userimage"];
     [cell.userImageView loadInBackground];
     cell.userImageView.layer.masksToBounds = true;
@@ -232,12 +230,20 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(PostCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (cell.isAnimated) {return;}
+    
+    cell.alpha = 0.0;
+    [UIView animateWithDuration:1.0 animations:^{
+       cell.alpha = 1.0;
+       cell.isAnimated = YES;
+    }];
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.filteredData.count;
 }
-
-
 
 
 

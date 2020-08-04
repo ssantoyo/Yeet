@@ -15,19 +15,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-n9-psY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-n9-psY">
                                 <rect key="frame" x="49" y="244.5" width="316" height="282"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="316" id="GOH-QJ-bAd"/>
+                                    <constraint firstAttribute="height" constant="282.5" id="f8D-TA-NiL"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YEET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5p-Cg-ekq">
-                                <rect key="frame" x="93" y="133" width="229" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YEET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5p-Cg-ekq">
+                                <rect key="frame" x="92.5" y="133" width="229" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="UXN-AG-D6Y"/>
+                                    <constraint firstAttribute="height" constant="103" id="ayF-E3-ZIA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="90"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="i5p-Cg-ekq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="S2v-Zv-8Ad"/>
+                            <constraint firstItem="SsW-n9-psY" firstAttribute="centerX" secondItem="i5p-Cg-ekq" secondAttribute="centerX" id="bLk-Lq-Yrt"/>
+                            <constraint firstItem="SsW-n9-psY" firstAttribute="top" secondItem="i5p-Cg-ekq" secondAttribute="bottom" constant="8" id="szB-4r-nm6"/>
+                            <constraint firstItem="i5p-Cg-ekq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="89" id="wVF-2W-QZ0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

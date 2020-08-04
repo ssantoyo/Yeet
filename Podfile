@@ -13,6 +13,8 @@ target 'Yeet' do
 	pod 'AFOAuth2Manager'
 	pod 'OAuth2'
 	pod 'AFNetworking'
+	pod 'MaterialComponents'
+
 
   target 'YeetTests' do
     inherit! :search_paths
