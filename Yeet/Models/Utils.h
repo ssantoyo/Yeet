@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
-+ (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size;
 
 
 @end

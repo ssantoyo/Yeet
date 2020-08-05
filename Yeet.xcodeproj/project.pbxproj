@@ -28,6 +28,7 @@
 		8D20DCE824BFA22100B3977D /* SpotifyiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D20DCE724BFA22100B3977D /* SpotifyiOS.framework */; };
 		8D43D67124DA036B0095484B /* ApplicationScheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D66F24DA036B0095484B /* ApplicationScheme.m */; };
 		8D43D67424DA16A20095484B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D67324DA16A20095484B /* Utils.m */; };
+		8D43D67A24DB28AE0095484B /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43D67924DB28AE0095484B /* InfiniteScrollActivityView.m */; };
 		8D5634F924C0C846004A6283 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5634F824C0C846004A6283 /* DetailsViewController.m */; };
 		8D5E047D24CA049900EAE9F8 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5E047C24CA049900EAE9F8 /* Song.m */; };
 		8D71BEDC24C8E29100093B72 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D71BEDB24C8E29100093B72 /* APIManager.m */; };
@@ -96,6 +97,8 @@
 		8D43D67024DA036B0095484B /* ApplicationScheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationScheme.h; sourceTree = "<group>"; };
 		8D43D67224DA16A20095484B /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		8D43D67324DA16A20095484B /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		8D43D67824DB28AE0095484B /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		8D43D67924DB28AE0095484B /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		8D5634F724C0C846004A6283 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		8D5634F824C0C846004A6283 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		8D5E047B24CA049900EAE9F8 /* Song.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				8DFDB38724D1F2C300FEB7F3 /* LikeActivity.m */,
 				8D43D67224DA16A20095484B /* Utils.h */,
 				8D43D67324DA16A20095484B /* Utils.m */,
+				8D43D67824DB28AE0095484B /* InfiniteScrollActivityView.h */,
+				8D43D67924DB28AE0095484B /* InfiniteScrollActivityView.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				8D20DCDA24BF57C100B3977D /* Post.m in Sources */,
 				8D43D67424DA16A20095484B /* Utils.m in Sources */,
 				8D20DCA624BE049E00B3977D /* main.m in Sources */,
+				8D43D67A24DB28AE0095484B /* InfiniteScrollActivityView.m in Sources */,
 				8D20DCD124BE52E500B3977D /* ProfileViewController.m in Sources */,
 				8D20DC9824BE049E00B3977D /* SceneDelegate.m in Sources */,
 				8DFDB38824D1F2C300FEB7F3 /* LikeActivity.m in Sources */,

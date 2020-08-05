@@ -77,25 +77,68 @@
 
 
 
-- (IBAction)tapHiphop:(id)sender {
-    [self.genres addObject: @"Hiphop"];
+- (IBAction)tapHiphop:(id)sender {UIButton *button = (UIButton *)sender;
+    // If not pressed
+    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
+        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.genres addObject: @"Hiphop"];
+    // If already pressed
+    } else {
+        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    }
+    
 }
 
 - (IBAction)tapRap:(id)sender {
-    [self.genres addObject: @"Rap"];
+    UIButton *button = (UIButton *)sender;
+    // If not pressed
+    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
+        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.genres addObject: @"Rap"];
+
+    // If already pressed
+    } else {
+        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)tapRandB:(id)sender {
-    [self.genres addObject: @"RandB"];
+    UIButton *button = (UIButton *)sender;
+    // If not pressed
+    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
+        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.genres addObject: @"RandB"];
+
+    // If already pressed
+    } else {
+        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)tapPop:(id)sender {
-    [self.genres addObject: @"Pop"];
+    UIButton *button = (UIButton *)sender;
+    // If not pressed
+    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
+        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.genres addObject: @"Pop"];
 
+    // If already pressed
+    } else {
+        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    }
 }
 
 - (IBAction)tapLatinX:(id)sender {
-    [self.genres addObject: @"LatinX"];
+    UIButton *button = (UIButton *)sender;
+    // If not pressed
+    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
+        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
+        [self.genres addObject: @"LatinX"];
+
+    // If already pressed
+    } else {
+        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+    }
 
 }
 
