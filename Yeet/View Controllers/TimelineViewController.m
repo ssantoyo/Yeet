@@ -162,6 +162,9 @@
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.genres removeObject:@"Rap"];
+        [self calculateSearch:self.genres];
+        [self getTimeline];
     }
         
 }
@@ -177,6 +180,9 @@
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.genres removeObject:@"Hiphop"];
+        [self calculateSearch:self.genres];
+        [self getTimeline];
     }
 }
 - (IBAction)tapRB:(id)sender {
@@ -190,6 +196,9 @@
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.genres removeObject:@"RandB"];
+        [self calculateSearch:self.genres];
+        [self getTimeline];
     }
 }
 - (IBAction)tapPop:(id)sender {
@@ -204,6 +213,9 @@
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.genres removeObject:@"Pop"];
+        [self calculateSearch:self.genres];
+        [self getTimeline];
     }
 }
 - (IBAction)tapLatinX:(id)sender {
@@ -218,6 +230,9 @@
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
+        [self.genres removeObject:@"LatinX"];
+        [self calculateSearch:self.genres];
+        [self getTimeline];
     }
 }
 
