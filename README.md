@@ -26,11 +26,11 @@ Any Individual could choose to use this app, since this app will be open to all 
 * [x] User can see app has multiple views
 * [x] User can log in/log out of your app as a user
 * [x] User can sign up with a new user profile
-* [ ] Your app incorporates an external library to add visual polish
+* [x] Your app incorporates an external library to add visual polish
 * [x] User can use the camera to take a picture and do something with the picture 
 * [x] Your app use an animation (doesn’t have to be fancy) (e.g. fade in/out, e.g. animating a view growing and shrinking)
 * [x] Your app uses gesture recognizers (e.g. double tap to like, e.g. pinch to scale) 
-* [ ] Your app contains at least one more complex algorithm 
+* [x] Your app contains at least one more complex algorithm 
 * [x] Your app interact with a database (e.g. Parse) 
 * [x] Your app integrates with a SDK (e.g. Google Maps SDK, Facebook SDK)
 
@@ -44,7 +44,7 @@ Any Individual could choose to use this app, since this app will be open to all 
 * [x] User can view username, profile picture, username, song title, artist title, and song review on timelineview
 * [x] User can see song selection
 * [x] User can use the search bar to search for songs
-* [ ] User can use the search bar to look for keywords
+* [x] User can use the search bar to look for keywords
 * [x] User can pull to refresh post
 * [x] In the Details view, user can see Album cover, song title, artist title, and can compose a song review and share it
 
