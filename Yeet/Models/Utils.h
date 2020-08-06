@@ -15,8 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
 
-
-
++ (NSNumber *)calculateSearch: (NSArray * _Nullable)genres;
 @end
 
 NS_ASSUME_NONNULL_END

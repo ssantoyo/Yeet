@@ -45,7 +45,7 @@
            self.songTitle = songTitle;
            self.albumTitle = albumTitle;
            self.song = song;
-           self.searchKey = [self calculateSearch:genres];
+           self.searchKey = [Utils calculateSearch:genres];
            self.likeCount = @(0);
     }
     return self;
@@ -56,21 +56,6 @@
  [self saveInBackgroundWithBlock: completion];
 }
 
--(NSNumber *)calculateSearch: (NSArray * _Nullable)genres{
-  //calculates a unique key based off the indexes of the genres
-    NSDictionary *genreIndex = @{
-    @"Hiphop": @(0),
-    @"Rap": @(1),
-    @"RandB": @(2),
-    @"Pop": @(3),
-    @"LatinX": @(4)
-};
-    int keyValue = 0;
-    for (NSString *genre in genres){
-    double power = pow(2,[genreIndex[genre] intValue]);
-    keyValue += ([self.searchKey intValue] + power);
-    }
-    return  [NSNumber numberWithInt:keyValue];
-}
+
 
 @end

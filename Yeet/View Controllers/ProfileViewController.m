@@ -111,14 +111,16 @@
     [self.delegate authorizationLogin];
 }
 
-- (IBAction)onTapSavebio:(id)sender {
-    
-    PFUser.currentUser[@"bio"] = self.bioField.text;
-    [PFUser.currentUser saveInBackground];
+- (IBAction)onTapSaveBio:(id)sender {
+    if(self.bioField.hasText){
+        PFUser.currentUser[@"bio"] = self.bioField.text;
+        [PFUser.currentUser saveInBackground];
+    }
 }
 
 - (IBAction)onTapEndField:(id)sender {
     [self.view endEditing:YES];
+    
 }
 
 

@@ -21,6 +21,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ApplicationScheme.h"
 #import "InfiniteScrollActivityView.h"
+#import "Utils.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,6 +35,8 @@
 @property (strong,nonatomic) AppDelegate *delegate;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
 @property (strong, nonatomic) InfiniteScrollActivityView *loadingMoreView;
+@property (assign, nonatomic) int skipcount;
+
 
 @end
 
@@ -85,6 +88,14 @@
 -(void)getTimeline{
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    
+    if([self.refreshControl isRefreshing]){
+        self.skipcount = 0;
+    }
+    if(self.isMoreDataLoading){
+        query.skip = self.skipcount;
+    }
+    
     //reorders post from recently added post to the top
     [query orderByDescending: @"createdAt"];
     query.limit = 20;
@@ -95,15 +106,25 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
-            self.posts = (NSMutableArray *)posts;
+
+            if(self.isMoreDataLoading){
+                [self.posts addObjectsFromArray:posts];
+            }else{
+                self.posts= [posts mutableCopy];
+            }
+            
             self.filteredData = self.posts;
 
+            //update flag
+            self.isMoreDataLoading = NO;
+            
             //refreshes tableView data
             [self.timelineTableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
         [self.refreshControl endRefreshing];
+        
     }];
 }
 
@@ -133,110 +154,41 @@
     }];
 }
 
--(void)calculateSearch: (NSArray * _Nullable)genres{
-  //calculates a unique key based off the indexes of the genres
-    NSDictionary *genreIndex = @{
-    @"Hiphop": @(0),
-    @"Rap": @(1),
-    @"RandB": @(2),
-    @"Pop": @(3),
-    @"LatinX": @(4)
-};
-    int keyValue = 0;
-    for (NSString *genre in genres){
-    double power = pow(2,[genreIndex[genre] intValue]);
-    keyValue +=  power;
-    }
-    self.searchKey = [NSNumber numberWithInt:keyValue];
-}
 
-- (IBAction)tapRap:(id)sender {
+- (void)tapGenreWithSender:sender andGenre:genre
+{
     UIButton *button = (UIButton *)sender;
     // If not pressed
     if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
         [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [self.genres addObject: @"Rap"];
-        [self calculateSearch:self.genres];
+        [self.genres addObject:genre];
+        self.searchKey = [Utils calculateSearch:self.genres];
         [self getGenres];
 
     // If already pressed
     } else {
         [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-        [self.genres removeObject:@"Rap"];
-        [self calculateSearch:self.genres];
+        [self.genres removeObject:genre];
+        self.searchKey = [Utils calculateSearch:self.genres];
         [self getTimeline];
     }
-        
+}
+
+- (IBAction)tapRap:(id)sender {
+    [self tapGenreWithSender:sender andGenre:@"Rap"];
 }
 - (IBAction)tapHiphop:(id)sender {
-    UIButton *button = (UIButton *)sender;
-    // If not pressed
-    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
-        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [self.genres addObject: @"Hiphop"];
-        [self calculateSearch:self.genres];
-        [self getGenres];
-        
-    // If already pressed
-    } else {
-        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-        [self.genres removeObject:@"Hiphop"];
-        [self calculateSearch:self.genres];
-        [self getTimeline];
-    }
+    [self tapGenreWithSender:sender andGenre:@"Hiphop"];
 }
 - (IBAction)tapRB:(id)sender {
-    UIButton *button = (UIButton *)sender;
-    // If not pressed
-    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
-        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [self.genres addObject: @"RandB"];
-        [self calculateSearch:self.genres];
-        [self getGenres];
-    // If already pressed
-    } else {
-        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-        [self.genres removeObject:@"RandB"];
-        [self calculateSearch:self.genres];
-        [self getTimeline];
-    }
+        [self tapGenreWithSender:sender andGenre:@"RandB"];
 }
 - (IBAction)tapPop:(id)sender {
-    UIButton *button = (UIButton *)sender;
-    // If not pressed
-    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
-        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [self.genres addObject: @"Pop"];
-        [self calculateSearch:self.genres];
-        [self getGenres];
-        
-    // If already pressed
-    } else {
-        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-        [self.genres removeObject:@"Pop"];
-        [self calculateSearch:self.genres];
-        [self getTimeline];
-    }
+        [self tapGenreWithSender:sender andGenre:@"Pop"];
 }
 - (IBAction)tapLatinX:(id)sender {
-    UIButton *button = (UIButton *)sender;
-    // If not pressed
-    if ([button.currentTitleColor isEqual:[UIColor systemBlueColor]]) {
-        [button setTitleColor:[UIColor colorWithRed:0/255.0 green:44/255.0 blue:145/255.0 alpha:1.0] forState:UIControlStateNormal];
-        [self.genres addObject: @"LatinX"];
-        [self calculateSearch:self.genres];
-        [self getGenres];
-        
-    // If already pressed
-    } else {
-        [button setTitleColor:[UIColor systemBlueColor] forState:UIControlStateNormal];
-        [self.genres removeObject:@"LatinX"];
-        [self calculateSearch:self.genres];
-        [self getTimeline];
-    }
+       [self tapGenreWithSender:sender andGenre:@"LatinX"];
 }
-
-
 
 
 
@@ -267,7 +219,7 @@
         }];}
 }
 
-/*
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if(!self.isMoreDataLoading){
         // Calculate the position of one screen length before the bottom of the results
@@ -276,12 +228,27 @@
         
         // When the user has scrolled past the threshold, start requesting
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.timelineTableView.isDragging) {
-            self. isMoreDataLoading = true;
-            [self loadMoreData];
-        }
+            self.isMoreDataLoading = true;
+            self.skipcount +=20;
+
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.timelineTableView.contentSize.height, self.timelineTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            self.loadingMoreView.frame = frame;
+            [self.loadingMoreView startAnimating];
+            
+            // Code to load more results
+            if (self.filteredData.count>=self.skipcount){
+                [self getTimeline];
+                NSLog(@"Loading MORE Posts.");
+            }else{
+                [self.loadingMoreView stopAnimating];
+                self.isMoreDataLoading = NO;
+            }        }
     }
 }
-*/
+
+
 
 
 
