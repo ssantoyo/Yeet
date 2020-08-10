@@ -52,7 +52,7 @@ Any Individual could choose to use this app, since this app will be open to all 
 
 * [x] User can like posts from both Review Feed and enlarged Review
 * [x] User can view their save and see their bio
-* [ ] User can infinitely scroll through posts
+* [x] User can infinitely scroll through posts
 
 
 ### 2. Screen Archetypes
