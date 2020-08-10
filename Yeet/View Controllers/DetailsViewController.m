@@ -107,6 +107,9 @@
         [self tapGenreWithSender:sender andGenre:@"LatinX"];
 }
 
+- (IBAction)onTap:(id)sender {
+    [self.view endEditing:YES];
+}
 
 
 
